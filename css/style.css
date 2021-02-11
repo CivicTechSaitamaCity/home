@@ -85,7 +85,7 @@ img{
 
 section{
 	clear:both;
-	padding-top: 70px;
+	padding-top: 40px;
 }
 
 section h2{
@@ -113,7 +113,7 @@ section h2 span {
 .innerS{
 	width: 60%;
 	margin: 0 auto;
-	padding-bottom: 80px;
+	padding-bottom: 40px;
 }
 
 
@@ -281,7 +281,7 @@ section h2 span {
 @media only screen and (max-width: 640px){
 	.innerS{
 		width: 94%;
-		padding-bottom: 70px;
+		padding-bottom: 40px;
 	}
 	.col3 li{
 		line-height: 1.7;
