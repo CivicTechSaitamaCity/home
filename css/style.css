@@ -124,13 +124,15 @@ section h2 span {
 }
 
 #sec02 header{
-	display: none;
+	/* display: none; */
 }
 
 #gallery li{
 	float: left;
 	width: calc(100%/3);
 	line-height: 0;
+	padding: 1px;
+	box-sizing: border-box;
 }
 
 #gallery img{
