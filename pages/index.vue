@@ -12,11 +12,9 @@
           <div class="panel">
             <ul>
               <li><a href="#top">TOP</a></li>
-              <li><a href="#news">NEWS</a></li>
-              <li><a href="#event">EVENT</a></li>
-              <li><a href="#vision">VISION</a></li>
-              <li><a href="#project">PROJECT</a></li>
-              <li><a href="#contact">CONTACT</a></li>
+              <li v-for="item in index.toc" v-bind:key="item.id">
+                <a :href="'#' + item.id">{{ item.text }}</a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -38,7 +36,7 @@
 export default {
   async asyncData({ $content }) {
     const index = await $content('index').fetch()
-
+    console.log(index.toc)
     return {
       index,
     }
