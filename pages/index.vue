@@ -12,7 +12,7 @@
           <div class="panel">
             <ul>
               <li><a href="#top">TOP</a></li>
-              <li v-for="item in index.toc" v-bind:key="item.id">
+              <li v-for="item in index.toc" :key="item.id">
                 <a :href="'#' + item.id">{{ item.text }}</a>
               </li>
             </ul>
@@ -36,7 +36,7 @@
 export default {
   async asyncData({ $content }) {
     const index = await $content('index').fetch()
-    console.log(index.toc)
+    // console.log(index.toc)
     return {
       index,
     }
@@ -44,7 +44,7 @@ export default {
 }
 </script>
 <style lang="scss">
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 
@@ -74,8 +74,8 @@ body {
 #mainImg img {
   position: absolute;
   left: 50%;
-  max-width: 1200px;
-  width: 1200px;
+  max-width: 1280px;
+  width: 1280px;
   height: 528px;
   margin-left: -640px;
 }
@@ -97,6 +97,9 @@ section h2 span {
   background: #fff;
 }
 
+.panel li a {
+    text-decoration: none;
+}
 /**
  * Nuxt content
  */
@@ -108,7 +111,7 @@ section h2 span {
     // font-family: 'Pacifico', cursive;
     font-family: 'Shadows Into Light', cursive;
     width: 60%;
-    margin: 0 auto 40px;
+    margin: 20px auto 20px;
     font-size: 3rem;
     font-weight: normal;
     text-align: center;
