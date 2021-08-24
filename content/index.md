@@ -57,8 +57,6 @@ title: シビックテックさいたま
   * 地域課題を解決するためのアプリやシステムの開発<
 
 ## Contact
-シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織
-
-email：civictech.saitama@gmail.com
-
-[![FB](images/iconFb.png)](https://www.facebook.com/CivicTechSaitamaCity)
+- シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織
+- email：civictech.saitama@gmail.com
+- [![FB](images/iconFb.png)](https://www.facebook.com/CivicTechSaitamaCity)

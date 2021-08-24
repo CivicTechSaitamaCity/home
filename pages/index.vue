@@ -47,11 +47,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
-
 body {
-  font: 14px/1.9 'Noto Sans JP', Arial, Verdana, 游ゴシック, YuGothic,
-    'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,
-    sans-serif;
+  font-size: 1em;
+  font-family: 'Noto Sans JP';
 }
 
 /* ヘッダー
@@ -98,7 +96,7 @@ section h2 span {
 }
 
 .panel li a {
-    text-decoration: none;
+  text-decoration: none;
 }
 /**
  * Nuxt content
@@ -108,7 +106,6 @@ section h2 span {
   margin: auto;
 
   h2 {
-    // font-family: 'Pacifico', cursive;
     font-family: 'Shadows Into Light', cursive;
     width: 60%;
     margin: 20px auto 20px;
@@ -130,6 +127,12 @@ section h2 span {
       a img {
         width: 100%;
       }
+    }
+  }
+  #contact + ul {
+    list-style-type: none;
+    img {
+      width: 24px;
     }
   }
 }
