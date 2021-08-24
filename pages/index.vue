@@ -45,7 +45,8 @@ export default {
 </script>
 <style lang="scss">
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 
 body {
   font: 14px/1.9 'Noto Sans JP', Arial, Verdana, 游ゴシック, YuGothic,
@@ -57,10 +58,6 @@ body {
 ------------------------------------------------------------*/
 #header {
   text-align: center;
-}
-
-#header h1 {
-  padding-top: 60px;
 }
 
 #mainnav a {
@@ -77,17 +74,13 @@ body {
 #mainImg img {
   position: absolute;
   left: 50%;
-  max-width: 1280px;
-  width: 1280px;
+  max-width: 1200px;
+  width: 1200px;
   height: 528px;
   margin-left: -640px;
 }
 a#menu {
   display: none;
-}
-
-.panel {
-  display: block !important;
 }
 
 #mainnav li {
@@ -102,7 +95,6 @@ section {
 
 section h2 span {
   background: #fff;
-  padding: 0 80px;
 }
 
 /**
@@ -113,10 +105,11 @@ section h2 span {
   margin: auto;
 
   h2 {
-    font-family: 'Pacifico', cursive;
+    // font-family: 'Pacifico', cursive;
+    font-family: 'Shadows Into Light', cursive;
     width: 60%;
     margin: 0 auto 40px;
-    font-size: 22px;
+    font-size: 3rem;
     font-weight: normal;
     text-align: center;
     // background: url('images/borderBlack.png') repeat-x 0 50%;
