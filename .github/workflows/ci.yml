@@ -53,7 +53,7 @@ name: ci
 on:
   push:
     branches:
-      - nuxt-install
+      - main
 
 jobs:
   ci:
@@ -98,7 +98,7 @@ jobs:
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/nuxt-install' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
