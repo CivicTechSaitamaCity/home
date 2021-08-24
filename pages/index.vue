@@ -41,11 +41,21 @@ export default {
       index,
     }
   },
+  head: {
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap',
+      },
+    ],
+  },
 }
 </script>
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 body {
   font-size: 1em;
@@ -106,7 +116,7 @@ section h2 span {
   margin: auto;
 
   h2 {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Shadows Into Light';
     width: 60%;
     margin: 20px auto 20px;
     font-size: 3rem;
