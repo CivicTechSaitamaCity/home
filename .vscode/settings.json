@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "[plaintext]": {
+    "editor.fontFamily": "Osaka-Mono",
+    "editor.fontSize": 14,
+  },
+  // マークダウンファイルの自動整形を停止
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+}
