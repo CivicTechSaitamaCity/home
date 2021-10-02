@@ -33,7 +33,7 @@ title: シビックテックさいたま
 まずは、一緒に「みんなでつくる・みんながつかえるオープンでフラットな仕組み」について考えてみませんか。
 
 ## Event
-- [![みんなでさわる。おさわりの日「uMap（ユーマップ）」](images/event202101011osawari.jpg)](https://www.facebook.com/events/612239026824012/)
+- [![みんなでさわる。おさわりの日「uMap（ユーマップ）」](images/event20211011osawari.jpg)](https://www.facebook.com/events/612239026824012/)
 - [![ひさびさの人・初めての人　オープンストリートマップおさらい講座](images/event20210920osm.jpg)](https://www.facebook.com/events/4202754799838435/)
 - [![オープンストリートマップでデータをつかった地図づくりに挑戦](images/event20210821natu.jpg)](https://www.facebook.com/events/357591455709810)
 - [![地域情報の運営ってどうすればいい？　勉強会＆ワークショップ](images/event20210728tiiki.jpg)](https://www.facebook.com/events/356784956063447)
