@@ -32,7 +32,7 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 body {
   font-size: 1em;
   font-family: 'Noto Sans JP';
@@ -77,7 +77,7 @@ section {
 /**
  * Nuxt content
  */
-.nuxt-content {
+::v-deep .nuxt-content {
   width: 100%;
   margin: auto;
 
@@ -88,7 +88,6 @@ section {
     font-size: 3rem;
     font-weight: normal;
     text-align: center;
-    // background: url('images/borderBlack.png') repeat-x 0 50%;
     background-size: 1px 1px;
   }
   #event + ul {
@@ -96,9 +95,6 @@ section {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    // @media screen and (max-width: 800px) {
-    //   display: none;
-    // }
     li {
       width: (100% / 3);
       margin: 0;
