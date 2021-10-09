@@ -1,34 +1,11 @@
 <template>
   <div>
-    <header id="header">
-      <div id="headerWrap">
-        <h1>
-          <img src="images/logo.png" width="142" height="80" alt="logo" />
-        </h1>
-        <nav id="mainnav">
-          <p id="menuWrap">
-            <a id="menu"><span id="menuBtn"></span></a>
-          </p>
-          <div class="panel">
-            <ul>
-              <li><a href="#top">TOP</a></li>
-              <li v-for="item in index.toc" :key="item.id">
-                <a :href="'#' + item.id">{{ item.text }}</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </header>
-
     <div id="mainImg">
       <img src="images/mainImg.jpg" alt="" />
     </div>
-
     <article>
       <nuxt-content :document="index" />
     </article>
-    <footer id="footer"></footer>
   </div>
 </template>
 
@@ -56,7 +33,6 @@ export default {
 }
 </script>
 <style lang="scss">
-
 body {
   font-size: 1em;
   font-family: 'Noto Sans JP';
@@ -64,9 +40,6 @@ body {
 
 /* ヘッダー
 ------------------------------------------------------------*/
-#header {
-  text-align: center;
-}
 
 #mainnav a {
   color: #000;
@@ -77,32 +50,25 @@ body {
   overflow: hidden;
   width: 100%;
   height: 528px;
+
+  img {
+    position: absolute;
+    left: 50%;
+    max-width: 1280px;
+    // width: 100%;
+
+    width: 1280px;
+    height: 528px;
+    margin-left: -640px;
+  }
 }
 
-#mainImg img {
-  position: absolute;
-  left: 50%;
-  max-width: 1280px;
-  width: 1280px;
-  height: 528px;
-  margin-left: -640px;
-}
-a#menu {
-  display: none;
-}
-
-#mainnav li {
-  display: inline-block;
-  padding: 50px 25px;
-  font-size: 15px;
-}
 section {
   clear: both;
   padding-top: 40px;
-}
-
-section h2 span {
-  background: #fff;
+  h2 span {
+    background: #fff;
+  }
 }
 
 .panel li a {
@@ -112,7 +78,7 @@ section h2 span {
  * Nuxt content
  */
 .nuxt-content {
-  width: 800px;
+  width: 100%;
   margin: auto;
 
   h2 {
@@ -126,9 +92,13 @@ section h2 span {
     background-size: 1px 1px;
   }
   #event + ul {
+    padding: 0;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    // @media screen and (max-width: 800px) {
+    //   display: none;
+    // }
     li {
       width: (100% / 3);
       margin: 0;
