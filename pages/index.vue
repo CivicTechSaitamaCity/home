@@ -28,6 +28,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap',
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Righteous&display=swap',
+      },
     ],
   },
 }
@@ -82,7 +86,7 @@ section {
   margin: auto;
 
   h2 {
-    font-family: 'Shadows Into Light';
+    font-family: 'Noto Sans JP', cursive;
     width: 60%;
     margin: 20px auto 20px;
     font-size: 3rem;
