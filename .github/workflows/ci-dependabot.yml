@@ -1,7 +1,7 @@
 name: ci
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -25,11 +25,7 @@ jobs:
           check-latest: true
       - name: Install NPM packages
         run: npm ci
+      - name: Lint
+        run: npm lint
       - name: Build website
         run: npm run generate
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
