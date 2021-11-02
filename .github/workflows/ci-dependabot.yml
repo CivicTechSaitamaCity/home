@@ -1,4 +1,4 @@
-name: ci
+name: ci-check
 
 on:
   pull_request:
@@ -26,6 +26,6 @@ jobs:
       - name: Install NPM packages
         run: npm ci
       - name: Lint
-        run: npm lint
+        run: npm run lint
       - name: Build website
         run: npm run generate
