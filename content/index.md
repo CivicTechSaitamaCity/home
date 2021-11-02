@@ -2,6 +2,7 @@
 title: シビックテックさいたま
 ---
 ## News
+- 2021.10.25 みんなでさわる。おさわりの日「Glide（グライド）」(11/16）を開催します　[FBイベント](https://www.facebook.com/events/600516421365027)
 - 2021.10.12 シビックテックサミットカナザワ2021に登壇します(11/14）　[イベント](https://civictechsummit.jp/)
 - 2021.10.04 「子育て経験をいかした行政と協働でつくる”地域のマップづくり”」(10/25）を開催します　[FBイベント](https://www.facebook.com/events/1549691885362083/)
 - 2021.10.02 みんなでさわる。おさわりの日「uMap（ユーマップ）」(10/11）を開催します　[FBイベント](https://www.facebook.com/events/612239026824012/)
@@ -35,6 +36,7 @@ title: シビックテックさいたま
 まずは、一緒に「みんなでつくる・みんながつかえるオープンでフラットな仕組み」について考えてみませんか。
 
 ## Event
+- [![みんなでさわる。おさわりの日「Glide（グライド）」”](images/event20211116glide.jpg)](https://www.facebook.com/events/600516421365027)
 - [![子育て経験をいかした行政と協働でつくる”地域のマップづくり”](images/event20211025asaka.jpg)](https://www.facebook.com/events/1549691885362083/)
 - [![みんなでさわる。おさわりの日「uMap（ユーマップ）」](images/event20211011osawari.jpg)](https://www.facebook.com/events/612239026824012/)
 - [![ひさびさの人・初めての人　オープンストリートマップおさらい講座](images/event20210920osm.jpg)](https://www.facebook.com/events/4202754799838435/)
