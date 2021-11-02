@@ -11,16 +11,16 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@nuxt/content": "^1.14.0",
+    "@nuxt/content": "^1.15.0",
     "@nuxtjs/google-gtag": "^1.0.4",
-    "core-js": "^3.17.3",
+    "core-js": "^3.19.0",
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.15.4",
-    "@nuxtjs/eslint-config": "^6.0.1",
+    "@babel/eslint-parser": "^7.16.0",
+    "@nuxtjs/eslint-config": "^7.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
-    "eslint": "^7.29.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.17.0",
