@@ -1,0 +1,35 @@
+body {
+  padding: 1vw;
+}
+h2 {
+  font-size: 4vw;
+  color: #333333;
+}
+p {
+  padding: 1vw;
+  font-size: 3.5vw;
+  color: #333333;
+}
+img.title {
+  width: 100%;
+}
+.person {
+  display: flex;
+  justify-content: center;
+}
+img.person__image {
+  display: block;
+  width: 20vw;
+  /* height: 200px; */
+  object-fit: cover;
+}
+.catch {
+  text-align: center;
+}
+.catch__text {
+  margin: auto;
+  width: 60vw;
+  font-size: 6vw;
+  font-weight: bold;
+  color: green;
+}
