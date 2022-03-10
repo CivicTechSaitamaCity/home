@@ -41,8 +41,8 @@ title: シビックテックさいたま
 まずは、一緒に「みんなでつくる・みんながつかえるオープンでフラットな仕組み」について考えてみませんか。
 
 ## Event
--- [![学校のPTA活動に必要なものをつくろう」”](images/event20220330pta.jpg)](https://www.facebook.com/events/1072091526691251/)
- [![やっぱりやりたい！ポッドキャスト入門」”](images/event20220228podcast.jpg)](https://www.facebook.com/events/967979757426624/)
+- [![学校のPTA活動に必要なものをつくろう」”](images/event20220330pta.jpg)](https://www.facebook.com/events/1072091526691251/)
+- [![やっぱりやりたい！ポッドキャスト入門」”](images/event20220228podcast.jpg)](https://www.facebook.com/events/967979757426624/)
 - [![ITを使った地域の街づくり入門講座全2回」”](images/event20220116machiaruki.jpg)](dlfiles/facebookmachiaruki20220116.pdf)
 - [![メンバーの情報共有に使えるツールを知りたい＜市民活動を考えるシリーズ＞」”](images/event20211130simin01.jpg)](https://www.facebook.com/events/386197209855639)
 - [![みんなでさわる。おさわりの日「Glide（グライド）」”](images/event20211116glide.jpg)](https://www.facebook.com/events/600516421365027)
