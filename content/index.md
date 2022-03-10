@@ -2,6 +2,7 @@
 title: シビックテックさいたま
 ---
 ## News
+- 2022.03.10 勉強会「学校のPTA活動に必要なものをつくろう」(3/30）を開催します　[FBイベント](https://www.facebook.com/events/1072091526691251/)
 - 2022.02.01　イベント　3月2日に行政＆市民協働で今話題のシビックテックを知って体験するセミナー「テーブル for シビックテック in さいたま」を開催します　[チラシPDF](dlfiles/20220302-table-for-civictech.pdf)
 - 2022.02.01 勉強会「やっぱりやりたい！ポッドキャスト入門」(2/28）を開催します　[FBイベント](https://www.facebook.com/events/967979757426624/)
 - 2021.12.26 勉強会「ITを使った地図づくり入門講座　全2回inさいたま市」(1/13・1/16）を開催します　[イベント](dlfiles/facebookmachiaruki20220116.pdf)
@@ -40,7 +41,8 @@ title: シビックテックさいたま
 まずは、一緒に「みんなでつくる・みんながつかえるオープンでフラットな仕組み」について考えてみませんか。
 
 ## Event
-- [![やっぱりやりたい！ポッドキャスト入門」”](images/event20220228podcast.jpg)](https://www.facebook.com/events/967979757426624/)
+-- [![学校のPTA活動に必要なものをつくろう」”](images/event20220330pta.jpg)](https://www.facebook.com/events/1072091526691251/)
+ [![やっぱりやりたい！ポッドキャスト入門」”](images/event20220228podcast.jpg)](https://www.facebook.com/events/967979757426624/)
 - [![ITを使った地域の街づくり入門講座全2回」”](images/event20220116machiaruki.jpg)](dlfiles/facebookmachiaruki20220116.pdf)
 - [![メンバーの情報共有に使えるツールを知りたい＜市民活動を考えるシリーズ＞」”](images/event20211130simin01.jpg)](https://www.facebook.com/events/386197209855639)
 - [![みんなでさわる。おさわりの日「Glide（グライド）」”](images/event20211116glide.jpg)](https://www.facebook.com/events/600516421365027)
