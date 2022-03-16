@@ -111,7 +111,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     li {
-      width: (100% / 3);
+      width:  calc(100% / 3);
       margin: 0;
       padding: 3px 6px;
       box-sizing: border-box;
