@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div id="mainImg-2">
+    <div id="mainImg">
+      <img src="images/mainImg.jpg" alt="" />
+      <!-- <div id="mainImg-2">
       <img src="images/civictech_A4_fly_fix_web_page-0001.jpg" alt="" />
       <img src="images/civictech_A4_fly_fix_web_page-0002.jpg" alt="" />
+      -->
     </div>
     <article>
       <nuxt-content :document="index" />
