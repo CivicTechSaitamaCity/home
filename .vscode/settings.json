@@ -1,16 +1,52 @@
 {
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
+  // ↓自動フォーマット関連
+  "editor.formatOnPaste": true, // ペースト時自動フォーマット
+  "editor.formatOnType": true, // 入力時自動フォーマット
+  "editor.formatOnSave": true, // 保存時自動フォーマット
+  // ↓自動フォーマット（html）
+  "html.format.endWithNewline": true, // htmlの末尾に改行を入れる
+  "html.format.preserveNewLines": true, // 要素の前の改行を保持する
+  "html.format.maxPreserveNewLines": 1, // 保持できる最大の改行数
+  // ↓自動フォーマット（eslint）
+  "eslint.alwaysShowStatus": true, // 常にeslintの状態を表示する
+  "eslint.format.enable": true, // eslintの自動フォーマット
+  // ↓自動フォーマット（stylelint）
+  "css.validate": false,
+  "scss.validate": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true,
-    "source.fixAll.eslint": true
+    "source.fixAll.stylelint": true
   },
-  "[plaintext]": {
-    "editor.fontFamily": "Osaka-Mono",
-    "editor.fontSize": 14,
+  // ↓コードスペルチェック除外項目
+  "cSpell.userWords": [
+    "amiten",
+    "autoplace",
+    "buefy",
+    "gitignore",
+    "nuxt",
+    "nuxtjs",
+    "stylelint",
+    "textlint",
+    "cdnjs"
+  ],
+  "stylelint.snippet": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "vue"
+  ],
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "vue"
+  ],
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // マークダウンファイルの自動整形を停止
   "[markdown]": {
     "editor.formatOnSave": false
-  },
+  }
 }

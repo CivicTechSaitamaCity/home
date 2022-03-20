@@ -1,0 +1,12 @@
+{
+  // このワークスペースのユーザーに推奨される拡張機能のリストです。
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "syler.sass-indented",
+    "hex-ci.stylelint-plus",
+    "octref.vetur",
+    "sdras.vue-vscode-snippets"
+  ]
+}
