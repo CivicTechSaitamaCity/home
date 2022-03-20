@@ -10,7 +10,7 @@
         <li><nuxt-link to="/#event">EVENT</nuxt-link></li>
         <li><nuxt-link to="/#vision">VISION</nuxt-link></li>
         <li><nuxt-link to="/#project">PROJECT</nuxt-link></li>
-        <li><nuxt-link to="/#contact">CONTACT</nuxt-link></li>
+        <li><nuxt-link to="/report">REPORT</nuxt-link></li>
       </ul>
     </div>
   </header>
