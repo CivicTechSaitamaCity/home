@@ -19,9 +19,8 @@ img.title {
 }
 img.person__image {
   display: block;
-  width: 20vw;
-  /* height: 200px; */
-  object-fit: cover;
+  height: 40vw;
+  object-fit: contain;
 }
 .catch {
   text-align: center;
