@@ -8,6 +8,13 @@
       -->
     </div>
     <article>
+      <nuxt-content :document="news" />
+    </article>
+    <article>
+      <nuxt-content :document="message" />
+    </article>
+    <article><nuxt-content :document="events" /></article>
+    <article>
       <nuxt-content :document="index" />
     </article>
   </div>
@@ -17,9 +24,15 @@
 export default {
   async asyncData({ $content }) {
     const index = await $content('index').fetch()
+    const events = await $content('events').fetch()
+    const message = await $content('message').fetch()
+    const news = await $content('news').fetch()
     // console.log(index.toc)
     return {
       index,
+      events,
+      message,
+      news,
     }
   },
   head: {
@@ -111,7 +124,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     li {
-      width:  calc(100% / 3);
+      width: calc(100% / 3);
       margin: 0;
       padding: 3px 6px;
       box-sizing: border-box;
