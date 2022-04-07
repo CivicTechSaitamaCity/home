@@ -17,6 +17,22 @@
     <article>
       <nuxt-content :document="index" />
     </article>
+    <article>
+      <div class="nuxt-content">
+        <h2>Contact</h2>
+        <ul class="footer__list">
+          <li>
+            シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織
+          </li>
+          <li>email：civictech.saitama@gmail.com</li>
+          <li>
+            <a href="https://www.facebook.com/CivicTechSaitamaCity">
+              <img src="images/iconFb.png" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </article>
   </div>
 </template>
 
@@ -106,7 +122,8 @@ section {
  * Nuxt content
  */
 ::v-deep .nuxt-content {
-  width: 100%;
+  // width: 100%;
+  max-width: 1000px;
   margin: auto;
 
   h2 {
@@ -134,6 +151,12 @@ section {
     }
   }
   #contact + ul {
+    list-style-type: none;
+    img {
+      width: 24px;
+    }
+  }
+  .footer__list li {
     list-style-type: none;
     img {
       width: 24px;
