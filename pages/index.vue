@@ -70,11 +70,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-body {
-  font-size: 1em;
-  font-family: 'Noto Sans JP';
-}
-
 /* ヘッダー
 ------------------------------------------------------------*/
 
@@ -125,6 +120,7 @@ section {
   // width: 100%;
   max-width: 1000px;
   margin: auto;
+  font-size: clamp(18px, 1vw, 24px);
 
   h2 {
     font-family: 'Noto Sans JP', cursive;
