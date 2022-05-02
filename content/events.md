@@ -1,4 +1,5 @@
 ## Event
+- [![『NPO法人ぷるすあるは』の活動を知ろう」”](images/event20220524plus.jpg)](https://www.facebook.com/events/1021121398803412/)
 - [![ITを使った地図づくり入門講座　さいたま市緑区編」”](images/event20220510machiaruki.jpg)](https://www.facebook.com/events/969654633750215/)
 - [![学校のPTA活動に必要なものをつくろう」”](images/event20220330pta.jpg)](https://www.facebook.com/events/1072091526691251/)
 - [![やっぱりやりたい！ポッドキャスト入門」”](images/event20220228podcast.jpg)](https://www.facebook.com/events/967979757426624/)
