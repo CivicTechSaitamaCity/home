@@ -22,7 +22,7 @@ export default {
       .sortBy('eventDate', 'desc')
       .where({ eventDate: { $gt: new Date(2020) } })
       .fetch()
-    // console.log(news, events)
+    console.log(events)
     // console.log(index.toc)
     return {
       events,
