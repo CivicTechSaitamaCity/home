@@ -1,16 +1,16 @@
 <template>
   <header class="header">
     <div class="header__wrapper">
-      <nuxt-link to="/">
+      <a href="/">
         <img class="header__logo" src="~assets/img/logo.png" alt="logo" />
-      </nuxt-link>
+      </a>
       <ul class="header__menu">
-        <li><nuxt-link to="/#news">NEWS</nuxt-link></li>
-        <li><nuxt-link to="/#message">MESSAGE</nuxt-link></li>
-        <li><nuxt-link to="/#event">EVENT</nuxt-link></li>
-        <li><nuxt-link to="/#vision">VISION</nuxt-link></li>
-        <li><nuxt-link to="/#project">PROJECT</nuxt-link></li>
-        <li><nuxt-link to="/report">REPORT</nuxt-link></li>
+        <li><a href="/#news">NEWS</a></li>
+        <li><a href="/#message">MESSAGE</a></li>
+        <li><a href="/#event">EVENT</a></li>
+        <li><a href="/#vision">VISION</a></li>
+        <li><a href="/#project">PROJECT</a></li>
+        <li><a href="/report">REPORT</a></li>
       </ul>
     </div>
   </header>

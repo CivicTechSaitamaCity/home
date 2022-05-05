@@ -8,12 +8,36 @@
       -->
     </div>
     <article>
-      <nuxt-content :document="news" />
+      <div id="news" class="nuxt-content">
+        <h2>News</h2>
+        <ul>
+          <li v-for="(article, index) in news" :key="index">
+            {{ article.date | date }}
+            {{ article.title }}
+            <a :href="article.link">
+              <span v-if="article.link">link</span>
+            </a>
+          </li>
+          <li><a href="/news">more...</a></li>
+        </ul>
+      </div>
     </article>
     <article>
       <nuxt-content :document="message" />
     </article>
-    <article><nuxt-content :document="events" /></article>
+    <article>
+      <div class="nuxt-content">
+        <h2 id="event">Event</h2>
+        <ul>
+          <li v-for="(article, index) in events" :key="index">
+            <a :href="article.link">
+              <img :src="article.thumb" alt="" />
+            </a>
+          </li>
+          <li><a href="/events">more...</a></li>
+        </ul>
+      </div>
+    </article>
     <article>
       <nuxt-content :document="index" />
     </article>
@@ -40,9 +64,18 @@
 export default {
   async asyncData({ $content }) {
     const index = await $content('index').fetch()
-    const events = await $content('events').fetch()
     const message = await $content('message').fetch()
-    const news = await $content('news').fetch()
+    const news = await $content('data', { deep: true })
+      .limit(10)
+      .sortBy('date', 'desc')
+      .where({ date: { $gt: new Date(2020) } })
+      .fetch()
+    const events = await $content('data', { deep: true })
+      .limit(9)
+      .sortBy('eventDate', 'desc')
+      .where({ eventDate: { $gt: new Date(2020) } })
+      .fetch()
+    // console.log(news, events)
     // console.log(index.toc)
     return {
       index,
