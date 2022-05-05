@@ -2,8 +2,8 @@
   <article>
     <h1>Report</h1>
     <nuxt-link v-for="(article, index) in data" :key="index" :to="article.path">
-      <p>{{ article.slug }}</p></nuxt-link
-    >
+      <p>{{ article.slug }}</p>
+    </nuxt-link>
   </article>
 </template>
 <script>
