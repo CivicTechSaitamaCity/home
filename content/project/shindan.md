@@ -11,4 +11,4 @@
 * 「人生これから診断」ツールの利用は[こちら](/shindan)から
 * <img width="20%" src="/images/project/shindan_qr.png">
 * 企画書のダウンロードは[こちら](/dlfiles/project_shindan.pdf)から
-* 「人生これから診断」を親に紹介するための冊子のダウンロードは[こちら](dlfiles/CTS_book_web_dl.pdf)から
+* 「人生これから診断」を親に紹介するための冊子のダウンロードは[こちら](/dlfiles/CTS_book_web_dl.pdf)から
