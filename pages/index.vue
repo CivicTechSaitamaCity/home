@@ -164,7 +164,8 @@ section {
     text-align: center;
     background-size: 1px 1px;
   }
-  #event + ul {
+  #event + ul,
+  #project + ul {
     padding: 0;
     list-style-type: none;
     display: flex;

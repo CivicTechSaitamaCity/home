@@ -6,10 +6,6 @@ title: シビックテックさいたま
 1. テクノロジーを活用してアイデアをサービスとして実現させる
 1. 行政のもつデータを“オープンデータ”にして有効活用する
 ## Project
-* オープンデータの活用促進
-  * 『テーブルforシビックテック』の開催
-  * 市区町村担当課（まちづくり、シニア、子育て等の分野）を対象とした、シビックテック実施のためのパッケージ
-* イベント・学習会の開催
-  * オリジナルシステムの開発
-  * 地域課題を解決するためのアプリやシステムの開発
-
+- [![診断ツール](/images/project/project_shindan.jpg)](project/shindan)
+- [![診断ツール](/images/project/project_kyouzai.jpg)](project/kyouzai)
+- [![診断ツール](/images/project/project_table.jpg)](project/table)
