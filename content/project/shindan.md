@@ -8,7 +8,7 @@
 
 さいたま市内在住のシニアへのインタビューやアンケートを元にデータを分析、シニアを１０タイプにわけ、それぞれの特徴と向いている活動（就労、ボランティア、学習など）を紹介するツールです。
 
-* 「人生これから診断」ツールの利用は[こちら](/shindan/index.html)から
+* 「人生これから診断」ツールの利用は<a href="/shindan/index.html" target="_blank">こちら</a>から
 * <img width="20%" src="/images/project/shindan_qr.png">
-* 企画書のダウンロードは[こちら](/dlfiles/project_shindan.pdf)から
-* 「人生これから診断」を親に紹介するための冊子のダウンロードは[こちら](/dlfiles/CTS_book_web_dl.pdf)から
+* 企画書のダウンロードは<a href="/dlfiles/project_shindan.pdf" target="_blank">こちら</a>から
+* 「人生これから診断」を親に紹介するための冊子のダウンロードは<a href="/dlfiles/CTS_book_web_dl.pdf" target="_blank">こちら</a>から
