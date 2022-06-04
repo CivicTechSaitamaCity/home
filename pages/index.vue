@@ -2,11 +2,8 @@
   <div>
     <div id="mainImg">
       <img src="images/mainImg.jpg" alt="" />
-      <!-- <div id="mainImg-2">
-      <img src="images/civictech_A4_fly_fix_web_page-0001.jpg" alt="" />
-      <img src="images/civictech_A4_fly_fix_web_page-0002.jpg" alt="" />
-      -->
     </div>
+
     <article>
       <div id="news" class="nuxt-content">
         <h2>News</h2>
@@ -22,9 +19,11 @@
         </ul>
       </div>
     </article>
+
     <article>
-      <nuxt-content :document="message" />
+      <nuxt-content :document="project" />
     </article>
+
     <article>
       <div class="nuxt-content">
         <h2 id="event">Event</h2>
@@ -38,9 +37,15 @@
         </ul>
       </div>
     </article>
+
     <article>
-      <nuxt-content :document="index" />
+      <nuxt-content :document="message" />
     </article>
+
+    <article>
+      <nuxt-content :document="vision" />
+    </article>
+
     <article>
       <div class="nuxt-content">
         <h2>Contact</h2>
@@ -63,7 +68,8 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const index = await $content('index').fetch()
+    const vision = await $content('vision').fetch()
+    const project = await $content('projects').fetch()
     const message = await $content('message').fetch()
     const news = await $content('data', { deep: true })
       .limit(10)
@@ -75,10 +81,10 @@ export default {
       .sortBy('eventDate', 'desc')
       .where({ eventDate: { $gt: new Date(2020) } })
       .fetch()
-    // console.log(news, events)
-    // console.log(index.toc)
+
     return {
-      index,
+      vision,
+      project,
       events,
       message,
       news,

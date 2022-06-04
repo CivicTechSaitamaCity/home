@@ -6,10 +6,10 @@
       </a>
       <ul class="header__menu">
         <li><a href="/#news">NEWS</a></li>
-        <li><a href="/#message">MESSAGE</a></li>
-        <li><a href="/#event">EVENT</a></li>
-        <li><a href="/#vision">VISION</a></li>
         <li><a href="/#project">PROJECT</a></li>
+        <li><a href="/#event">EVENT</a></li>
+        <li><a href="/#message">MESSAGE</a></li>
+        <li><a href="/#vision">VISION</a></li>
         <li><a href="/report">REPORT</a></li>
       </ul>
     </div>
