@@ -14,7 +14,8 @@
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/google-gtag": "^1.0.4",
     "core-js": "^3.22.7",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.8",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
@@ -24,8 +25,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-vue": "^9.1.0",
-    "sass": "^1.52.1",
     "prettier": "^2.6.2",
+    "sass": "^1.52.1",
     "sass-loader": "^10.2.0"
   }
 }

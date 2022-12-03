@@ -44,7 +44,7 @@
     "vue"
   ],
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "yoyo930021.vuter"
   },
   "[markdown]": {
     "editor.formatOnSave": false

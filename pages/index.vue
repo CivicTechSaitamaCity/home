@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div id="mainImg">
-      <img src="images/mainImg.jpg" alt="" />
-    </div>
-
+    <Swiper />
     <article>
       <div id="news" class="nuxt-content">
         <h2>News</h2>
@@ -66,6 +63,7 @@
 </template>
 
 <script>
+import Swiper from './-Swiper'
 export default {
   async asyncData({ $content }) {
     const vision = await $content('vision').fetch()
@@ -106,6 +104,9 @@ export default {
       },
     ],
   },
+  components: {
+    Swiper,
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -120,7 +121,7 @@ export default {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 528px;
+  height: 400px;
 
   img {
     position: absolute;
