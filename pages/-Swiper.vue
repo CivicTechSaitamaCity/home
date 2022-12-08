@@ -27,12 +27,12 @@ export default {
     return {
       items: [
         { img: '/images/mainImg.jpg' },
-        { img: '/images/project/project_table.jpg' },
         { img: '/images/project/project_shindan.jpg' },
+        { img: '/images/project/project_table.jpg' },
         { img: '/images/project/project_kyouzai.jpg' },
       ],
       swiperOptions: {
-        speed: 1000,
+        speed: 2000,
         autoplay: {
           delay: 8000,
           disableOnInteraction: false,
@@ -40,6 +40,9 @@ export default {
         loop: true,
         loopAdditionalSlides: 1,
         watchSlidesProgress: true,
+        nextButton: true,
+        prevButton: true,
+        effect: 'fade',
       },
     }
   },
@@ -59,10 +62,11 @@ export default {
 
 <style lang="scss" scoped>
 .example {
-  height: auto;
   .swiper {
     height: 400px;
     width: 100%;
+    max-width: 100%;
+
     .swiper-slide {
       &:not(.swiper-slide-visible) {
         .slide {
