@@ -71,6 +71,7 @@ export default {
     const message = await $content('message').fetch()
     const news = await $content('data', { deep: true })
       .limit(10)
+      .sortBy('eventDate', 'desc')
       .sortBy('date', 'desc')
       .where({ date: { $gt: new Date(2020) } })
       .fetch()

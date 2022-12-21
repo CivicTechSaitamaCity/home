@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       items: [
-        { img: '/images/mainImg.jpg' },
+        { img: '/images/event230115seniorIdeathon.jpg' },
         { img: '/images/project/project_shindan.jpg' },
         { img: '/images/project/project_table.jpg' },
         { img: '/images/project/project_kyouzai.jpg' },
