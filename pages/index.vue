@@ -1,46 +1,52 @@
 <template>
   <div>
-    <Swiper />
+    <TopSlider />
     <article>
       <div id="news" class="nuxt-content">
         <h2>News</h2>
         <ul>
           <li v-for="(article, index) in news" :key="index">
-            {{ article.date | date }}
+            {{ formatDate(article.date) }}
             {{ article.title }}
             <a :href="article.link">
               <span v-if="article.link">link</span>
             </a>
           </li>
-          <li><a href="/news">more...</a></li>
         </ul>
+        <span><a href="/news">more...</a></span>
       </div>
     </article>
 
     <article>
-      <nuxt-content :document="project" />
+      <div id="project" class="nuxt-content">
+        <ContentDoc path="projects" />
+      </div>
     </article>
 
     <article>
       <div class="nuxt-content">
         <h2 id="event">Event</h2>
         <ul>
-          <li v-for="(article, index) in events" :key="index">
-            <a :href="article.link">
-              <img :src="article.thumb" alt="" />
+          <li v-for="(event, index) in events" :key="index">
+            <a :href="event.link">
+              <img :src="event.thumb" alt="" />
             </a>
           </li>
-          <li><a href="/events">more...</a></li>
         </ul>
+        <span><a href="/events">more...</a></span>
       </div>
     </article>
 
     <article>
-      <nuxt-content :document="message" />
+      <div id="message" class="nuxt-content">
+        <ContentDoc path="message" />
+      </div>
     </article>
 
     <article>
-      <nuxt-content :document="vision" />
+      <div id="vision" class="nuxt-content">
+        <ContentDoc path="vision" />
+      </div>
     </article>
 
     <article>
@@ -53,66 +59,33 @@
           <li>email：civictech.saitama@gmail.com</li>
           <li>
             <a href="https://www.facebook.com/CivicTechSaitamaCity">
-              <img src="images/iconFb.png" alt=""
-            /></a>
+              <img src="/images/iconFb.png" alt="" /></a>
           </li>
         </ul>
       </div>
     </article>
+
   </div>
 </template>
 
-<script>
-import Swiper from './-Swiper'
-export default {
-  async asyncData({ $content }) {
-    const vision = await $content('vision').fetch()
-    const project = await $content('projects').fetch()
-    const message = await $content('message').fetch()
-    const news = await $content('data', { deep: true })
-      .limit(10)
-      .sortBy('eventDate', 'desc')
-      .sortBy('date', 'desc')
-      .where({ date: { $gt: new Date(2020) } })
-      .fetch()
-    const events = await $content('data', { deep: true })
-      .limit(9)
-      .sortBy('eventDate', 'desc')
-      .where({ eventDate: { $gt: new Date(2020) } })
-      .fetch()
+<script setup>
 
-    return {
-      vision,
-      project,
-      events,
-      message,
-      news,
-    }
-  },
-  head: {
-    link: [
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Righteous&display=swap',
-      },
-    ],
-  },
-  components: {
-    Swiper,
-  },
-}
+const news = await queryContent("/data")
+  .limit(10)
+  .sort({ eventDate: -1 })
+  .sort({ date: -1 })
+  .where({ date: { $gt: new Date(2020) } })
+  .find();
+
+const events = await queryContent("/data")
+  .limit(9)
+  .sort({ eventDate: -1 })
+  .where({ eventDate: { $gt: new Date(2020) } })
+  .find();
 </script>
+
 <style lang="scss" scoped>
-/* ヘッダー
-------------------------------------------------------------*/
+/* ヘッダー */
 
 #mainnav a {
   color: #000;
@@ -138,6 +111,7 @@ export default {
 
 #mainImg-2 {
   display: flex;
+
   img {
     width: 50%;
   }
@@ -146,6 +120,7 @@ export default {
 section {
   clear: both;
   padding-top: 40px;
+
   h2 span {
     background: #fff;
   }
@@ -154,48 +129,60 @@ section {
 .panel li a {
   text-decoration: none;
 }
+
 /**
  * Nuxt content
  */
-::v-deep .nuxt-content {
+:deep(.nuxt-content) {
   // width: 100%;
   max-width: 1000px;
   margin: auto;
   font-size: clamp(18px, 1vw, 24px);
 
   h2 {
-    font-family: 'Noto Sans JP', cursive;
+    font-family: "Noto Sans JP", cursive;
     width: 60%;
     margin: 20px auto 20px;
     font-size: 3rem;
     font-weight: normal;
     text-align: center;
     background-size: 1px 1px;
+
+    a {
+      text-decoration: none;
+    }
   }
-  #event + ul,
-  #project + ul {
+
+  #event+ul,
+  #project+ul {
     padding: 0;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+
     li {
       width: calc(100% / 3);
       margin: 0;
       padding: 3px 6px;
       box-sizing: border-box;
+
       a img {
         width: 100%;
       }
     }
   }
-  #contact + ul {
+
+  #contact+ul {
     list-style-type: none;
+
     img {
       width: 24px;
     }
   }
+
   .footer__list li {
     list-style-type: none;
+
     img {
       width: 24px;
     }

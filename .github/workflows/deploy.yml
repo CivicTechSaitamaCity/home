@@ -1,10 +1,8 @@
-name: ci
-
+name: deploy
 on:
   push:
     branches:
       - main
-
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
@@ -12,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [16]
+        node: [18]
 
     steps:
       - name: Checkout 🛎
@@ -24,10 +22,10 @@ jobs:
           node-version: ${{ matrix.node }}
           check-latest: true
       - name: Install NPM packages
-        run: npm ci
+        run: yarn install
       - name: Build website
-        run: npm run generate
-      - name: deploy
+        run: yarn generate
+      - name: deploy-to-github-pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
