@@ -54,7 +54,7 @@
         <h2>Contact</h2>
         <ul class="footer__list">
           <li>
-            シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織
+            シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織、古川尚史
           </li>
           <li>email：civictech.saitama@gmail.com</li>
           <li>
