@@ -1,1 +1,0 @@
-import{N as r,a2 as n,a3 as o,a4 as s,an as f,ao as u}from"./app.config.cca02cee.js";const _=r({__name:"ProseA",props:{href:{type:String,default:""},target:{type:String,default:void 0,required:!1}},setup(e){return(t,c)=>{const a=f;return n(),o(a,{href:e.href,target:e.target},{default:s(()=>[u(t.$slots,"default")]),_:3},8,["href","target"])}}});export{_ as default};
