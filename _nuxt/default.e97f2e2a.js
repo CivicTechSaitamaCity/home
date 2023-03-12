@@ -1,1 +1,0 @@
-import r from"./TheHeader.39c4ec7d.js";import _ from"./TheFooter.ce5ef278.js";import{a}from"./entry.5c9b689d.js";import{a2 as c,al as m,a5 as o,ao as s}from"./app.config.92f94ff1.js";/* empty css                      */const p={};function f(e,l){const t=r,n=_;return c(),m("div",null,[o(t),s(e.$slots,"default"),o(n)])}const k=a(p,[["render",f]]);export{k as default};
