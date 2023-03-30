@@ -19,7 +19,7 @@
 
     <article>
       <div id="project" class="nuxt-content">
-        <ContentDo :head="false" path="projects" />
+        <ContentDoc :head="false" path="projects" />
       </div>
     </article>
 
