@@ -2,11 +2,13 @@
   <div>
     <TopSlider />
     <article>
-      <div id="news" class="nuxt-content">
-        <h2>News</h2>
+      <div class="nuxt-content">
+        <h2 id="news">News</h2>
         <ul>
           <li v-for="(article, index) in news" :key="index">
-            {{ formatDate(article.date) }}
+            <span class="news-date">
+              {{ formatDate(article.date) }}
+            </span>
             {{ article.title }}
             <a :href="article.link">
               <span v-if="article.link">link</span>
@@ -151,6 +153,16 @@ section {
     a {
       text-decoration: none;
     }
+  }
+
+  #news+ul {
+    list-style-type: none;
+    padding: 0 8px;
+
+    .news-date {
+      font-weight: bold;
+    }
+
   }
 
   #event+ul,
