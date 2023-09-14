@@ -13,7 +13,7 @@
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
-    "sass": "^1.66.1",
+    "sass": "^1.67.0",
     "swiper": "^9.3.2"
   }
 }
