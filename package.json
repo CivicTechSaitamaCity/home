@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@nuxt/content": "^2.8.5",
-    "nuxt": "3.7.4",
+    "nuxt": "3.8.2",
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
