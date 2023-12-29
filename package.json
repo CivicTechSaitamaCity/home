@@ -13,7 +13,8 @@
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
-    "sass": "^1.69.5",
-    "swiper": "^9.3.2"
+    "embla-carousel-autoplay": "^8.0.0-rc17",
+    "embla-carousel-vue": "^8.0.0-rc17",
+    "sass": "^1.69.5"
   }
 }

@@ -1,49 +1,63 @@
 <template>
-
-  <swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :autoplay="{
-  delay: 8000,
-  disableOnInteraction: false,
-}" effect="fade" :loopAdditionalSlides="1" :modules="modules">
-    <swiper-slide v-for="item in items" :key="item.id">
-      <img :src="item.img" alt="alt" />
-    </swiper-slide>
-  </swiper>
+  <div class="embla" ref="emblaNode">
+    <div class="embla__container">
+      <div class="embla__slide" v-for="item in items" :key="item.id">
+        <img :src="item.img" alt="alt" />
+      </div>
+    </div>
+  </div>
 </template>
-<script setup>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, EffectFade } from "swiper";
-import "swiper/css";
-import 'swiper/css/effect-fade';
-const modules = [Autoplay, EffectFade];
 
-const items = [
-  { img: '/images/event230115seniorIdeathon.jpg' },
-  { img: '/images/project/project_shindan.jpg' },
-  { img: '/images/project/project_table.jpg' },
-  { img: '/images/project/project_kyouzai.jpg' },
-]
+<script>
+import emblaCarouselVue from "embla-carousel-vue";
+import Autoplay from "embla-carousel-autoplay";
+
+export default {
+  setup() {
+    const [emblaNode] = emblaCarouselVue({ loop: true }, [
+      Autoplay({ delay: 6000 })
+    ]);
+    return { emblaNode };
+  },
+  data() {
+    return {
+      items: [
+        { img: "/images/event230115seniorIdeathon.jpg" },
+        { img: "/images/project/project_shindan.jpg" },
+        { img: "/images/project/project_table.jpg" },
+        { img: "/images/project/project_kyouzai.jpg" }
+      ]
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-.swiper {
-  height: 400px;
+.embla {
+  overflow: hidden;
   width: 100%;
   max-width: 100%;
+  background-color: #eee;
 
-  .swiper-slide {
-    &:not(.swiper-slide-visible) {
-      .slide {
-        pointer-events: none;
-        opacity: 0.3;
-      }
-    }
-
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-    background-color: #eee;
+  &__container {
     display: flex;
+    align-items: flex-start;
+  }
+
+  &__slide {
+    flex: 0 0 auto;
+    min-width: 0;
+    max-width: 100%;
+    text-align: center;
     justify-content: center;
+    height: 24vw;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 </style>
+
