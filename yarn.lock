@@ -629,7 +629,7 @@
     read-package-json-fast "^3.0.0"
     which "^4.0.0"
 
-"@nuxt/content@^2.8.5":
+"@nuxt/content@^2.10.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.10.0.tgz#352a0be2ea472964c8791bf89a4c9026df5188e5"
   integrity sha512-HZ+1RJJc2SZc/FPYvbsME7b8++a2uf6g9JlMm+qUMDjnCWJaF38pbrsmYq2b9whXx/3WjpBmCRkWCJy6bjSP+g==
