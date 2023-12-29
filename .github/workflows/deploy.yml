@@ -5,22 +5,15 @@ on:
       - main
 jobs:
   ci:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [18]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
-
-      - name: Setup node env 🏗
+      - name: Use Node.js based on .node-version
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-          check-latest: true
+          node-version-file: '.node-version'
       - name: Install NPM packages
         run: yarn install
       - name: Build website
