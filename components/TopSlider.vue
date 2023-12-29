@@ -51,6 +51,7 @@ export default {
     text-align: center;
     justify-content: center;
     height: 24vw;
+    max-height: 400px;
 
     img {
       width: 100%;
