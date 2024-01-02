@@ -6,26 +6,21 @@
         <h2 id="news">News</h2>
         <ul>
           <li v-for="(article, index) in news" :key="index">
-            <span class="news-date">
-              {{ formatDate(article.date) }}
-            </span>
+            <span class="news-date">{{ formatDate(article.date) }}</span>
 
             <div v-if="article.eventDate" class="event-date">
-              <span class="event-date-text">
-                開催日
-              </span>
+              <span class="event-date-text">開催日</span>
               {{ formatDate(article.eventDate) }}
             </div>
 
             <a class="news-link" :href="article.link">
-              <span v-if="article.link">
-                {{ article.title }}
-              </span>
+              <span v-if="article.link">{{ article.title }}</span>
             </a>
-
           </li>
         </ul>
-        <span><a href="/news">more...</a></span>
+        <span>
+          <a href="/news">more...</a>
+        </span>
       </div>
     </article>
 
@@ -41,11 +36,13 @@
         <ul>
           <li v-for="(event, index) in events" :key="index">
             <a :href="event.link">
-              <img :src="event.thumb" alt="" />
+              <img :src="event.thumb" alt />
             </a>
           </li>
         </ul>
-        <span><a href="/events">more...</a></span>
+        <span>
+          <a href="/events">more...</a>
+        </span>
       </div>
     </article>
 
@@ -65,23 +62,20 @@
       <div class="nuxt-content">
         <h2>Contact</h2>
         <ul class="footer__list">
-          <li>
-            シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織、古川尚史
-          </li>
+          <li>シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織、古川尚史</li>
           <li>email：civictech.saitama@gmail.com</li>
           <li>
             <a href="https://www.facebook.com/CivicTechSaitamaCity">
-              <img src="/images/iconFb.png" alt="" /></a>
+              <img src="/images/iconFb.png" alt />
+            </a>
           </li>
         </ul>
       </div>
     </article>
-
   </div>
 </template>
 
 <script setup>
-
 const news = await queryContent("/data")
   .limit(10)
   .sort({ eventDate: -1 })
@@ -165,7 +159,7 @@ section {
     }
   }
 
-  #news+ul {
+  #news + ul {
     list-style-type: none;
     padding: 0 8px;
 
@@ -179,8 +173,6 @@ section {
       font-size: 14px;
       display: inline-block;
       margin-right: 16px;
-      ;
-
       &-text {
         color: #000;
         border: 1px solid;
@@ -191,11 +183,10 @@ section {
     .news-link {
       text-decoration: none;
     }
-
   }
 
-  #event+ul,
-  #project+ul {
+  #event + ul,
+  #project + ul {
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -213,7 +204,7 @@ section {
     }
   }
 
-  #contact+ul {
+  #contact + ul {
     list-style-type: none;
 
     img {

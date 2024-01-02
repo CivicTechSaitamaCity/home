@@ -5,29 +5,23 @@
         <h2 id="news">News</h2>
         <ul>
           <li v-for="(article, index) in news" :key="index">
-            <span class="news-date">
-              {{ formatDate(article.date) }}
-            </span>
+            <span class="news-date">{{ formatDate(article.date) }}</span>
 
             <div v-if="article.eventDate" class="event-date">
-              <span class="event-date-text">
-                開催日
-              </span>
+              <span class="event-date-text">開催日</span>
               {{ formatDate(article.eventDate) }}
             </div>
 
             <a class="news-link" :href="article.link">
-              <span v-if="article.link">
-                {{ article.title }}
-              </span>
+              <span v-if="article.link">{{ article.title }}</span>
             </a>
-
           </li>
         </ul>
-        <span><a href="/news">more...</a></span>
+        <span>
+          <a href="/news">more...</a>
+        </span>
       </div>
     </article>
-
   </div>
 </template>
 
@@ -57,7 +51,7 @@ const news = await queryContent("/data")
   }
 }
 
-#news+ul {
+#news + ul {
   list-style-type: none;
   padding: 0 8px;
 
@@ -71,8 +65,6 @@ const news = await queryContent("/data")
     font-size: 14px;
     display: inline-block;
     margin-right: 16px;
-    ;
-
     &-text {
       color: #000;
       border: 1px solid;
@@ -83,6 +75,5 @@ const news = await queryContent("/data")
   .news-link {
     text-decoration: none;
   }
-
 }
 </style>
