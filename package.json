@@ -8,12 +8,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.8.5",
-    "nuxt": "3.7.4",
+    "@nuxt/content": "^2.10.0",
+    "nuxt": "3.9.0",
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
-    "sass": "^1.69.1",
-    "swiper": "^9.3.2"
+    "embla-carousel-autoplay": "^8.0.0-rc17",
+    "embla-carousel-vue": "^8.0.0-rc17",
+    "sass": "^1.69.6"
   }
 }
