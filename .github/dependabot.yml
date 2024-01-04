@@ -30,3 +30,6 @@ updates:
     prefix: fix
     prefix-development: chore
     include: scope
+  automerge:
+    enabled: true
+    review_window_before: 1h
