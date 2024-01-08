@@ -13,7 +13,7 @@
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
-    "embla-carousel-autoplay": "^8.0.0-rc18",
+    "embla-carousel-autoplay": "^8.0.0-rc19",
     "embla-carousel-vue": "^8.0.0-rc19",
     "sass": "^1.69.7"
   }
