@@ -2585,10 +2585,10 @@ electron-to-chromium@^1.4.601:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.640.tgz#76290a36fa4b5f1f4cadaf1fc582478ebb3ac246"
   integrity sha512-z/6oZ/Muqk4BaE7P69bXhUhpJbUM9ZJeka43ZwxsDshKtePns4mhBlh8bU5+yrnOnz3fhG82XLzGUXazOmsWnA==
 
-embla-carousel-autoplay@^8.0.0-rc23:
-  version "8.0.0-rc23"
-  resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-8.0.0-rc23.tgz#21b1e059ef243325073b149c1f46fe25c9fd0329"
-  integrity sha512-1c8+9Qs/kbZAYMInXGUqyXPbR8fY34WgxQ/00RFUIY66HZDBdji2p2YkepTpU9sZyrD+o5NTCNMJ3TIHiRwaUA==
+embla-carousel-autoplay@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-8.0.0.tgz#35c68d222b23a43af65e54dc93424017a2df2641"
+  integrity sha512-FWHhZULH5+ydg7fiabwQppCDoTMi8pbMC20lmVytoXn7hH2KAhXHc/8yCUb3yToqMduCN6xPKUONtgzBqz3RZg==
 
 embla-carousel-reactive-utils@8.0.0-rc23:
   version "8.0.0-rc23"
