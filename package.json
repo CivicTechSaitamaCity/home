@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "embla-carousel-autoplay": "^8.0.0",
-    "embla-carousel-vue": "^8.0.0-rc23",
+    "embla-carousel-vue": "^8.0.0",
     "sass": "^1.70.0"
   }
 }
