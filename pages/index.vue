@@ -14,7 +14,7 @@
             </div>
 
             <a class="news-link" :href="article.link">
-              <span v-if="article.link">{{ article.title }}</span>
+              <span>{{ article.title }}</span>
             </a>
           </li>
         </ul>
@@ -34,7 +34,11 @@
       <div class="nuxt-content">
         <h2 id="event">Event</h2>
         <ul>
-          <li v-for="(event, index) in events" :key="index">
+          <li
+            v-for="(event, index) in events"
+            :key="index"
+            :class="{ 'is-hidden': event.thumb === none }"
+          >
             <a :href="event.link">
               <img :src="event.thumb" alt />
             </a>
@@ -62,7 +66,9 @@
       <div class="nuxt-content">
         <h2>Contact</h2>
         <ul class="footer__list">
-          <li>シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織、古川尚史</li>
+          <li>
+            シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織、古川尚史
+          </li>
           <li>email：civictech.saitama@gmail.com</li>
           <li>
             <a href="https://www.facebook.com/CivicTechSaitamaCity">
@@ -203,7 +209,9 @@ section {
       }
     }
   }
-
+  .is-hidden {
+    display: none;
+  }
   #contact + ul {
     list-style-type: none;
 

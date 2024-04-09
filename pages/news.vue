@@ -13,7 +13,7 @@
             </div>
 
             <a class="news-link" :href="article.link">
-              <span v-if="article.link">{{ article.title }}</span>
+              <span>{{ article.title }}</span>
             </a>
           </li>
         </ul>

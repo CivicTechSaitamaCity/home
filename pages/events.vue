@@ -4,7 +4,11 @@
       <div class="nuxt-content">
         <h2 id="event">Event</h2>
         <ul>
-          <li v-for="(event, index) in events" :key="index">
+          <li
+            v-for="(event, index) in events"
+            :key="index"
+            :class="{ 'is-hidden': event.thumb === none }"
+          >
             <a :href="event.link">
               <img :src="event.thumb" alt />
             </a>
@@ -56,5 +60,8 @@ const events = await queryContent("/data")
       }
     }
   }
+}
+.is-hidden {
+  display: none;
 }
 </style>
