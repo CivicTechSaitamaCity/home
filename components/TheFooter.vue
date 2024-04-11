@@ -1,7 +1,7 @@
 <template>
   <div>
     <hr />
-    <footer class="footer__caption">Civictech Saitama 2022</footer>
+    <footer class="footer__caption">Civictech Saitama 2024</footer>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -17,7 +17,7 @@
   &__caption {
     color: #444;
     text-align: center;
-    font-family: 'Shadows Into Light';
+    font-family: "Shadows Into Light";
   }
 }
 </style>
