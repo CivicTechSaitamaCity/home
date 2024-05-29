@@ -15,21 +15,22 @@ import Autoplay from "embla-carousel-autoplay";
 export default {
   setup() {
     const [emblaNode] = emblaCarouselVue({ loop: true }, [
-      Autoplay({ delay: 6000 })
+      Autoplay({ delay: 6000 }),
     ]);
     return { emblaNode };
   },
   data() {
     return {
       items: [
+        { img: "/images/240607-small-digital-consult.png" },
         { img: "/images/240302-park-opendata.jpg" },
         { img: "/images/event230115seniorIdeathon.jpg" },
         { img: "/images/project/project_shindan.jpg" },
         { img: "/images/project/project_table.jpg" },
-        { img: "/images/project/project_kyouzai.jpg" }
-      ]
+        { img: "/images/project/project_kyouzai.jpg" },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -62,4 +63,3 @@ export default {
   }
 }
 </style>
-
