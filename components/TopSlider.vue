@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       items: [
-        { img: "/images/240704-small-digital-consult.jpg" },
+        { img: "/images/240808-small-digital-consult.jpg" },
         { img: "/images/240302-park-opendata.jpg" },
         { img: "/images/event230115seniorIdeathon.jpg" },
         { img: "/images/project/project_shindan.jpg" },
