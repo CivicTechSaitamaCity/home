@@ -2,7 +2,10 @@
   <div class="embla" ref="emblaNode">
     <div class="embla__container">
       <div class="embla__slide" v-for="item in items" :key="item.id">
-        <img :src="item.img" alt="alt" />
+        <a v-if="item.link" :href="item.link" target="_blank">
+          <img :src="item.img" alt="alt" />
+        </a>
+        <img v-else :src="item.img" alt="alt" />
       </div>
     </div>
   </div>
@@ -22,12 +25,26 @@ export default {
   data() {
     return {
       items: [
-        { img: "/images/240907UDCkickoff.jpg" },
-        { img: "/images/240302-park-opendata.jpg" },
-        { img: "/images/event230115seniorIdeathon.jpg" },
-        { img: "/images/project/project_shindan.jpg" },
-        { img: "/images/project/project_table.jpg" },
-        { img: "/images/project/project_kyouzai.jpg" },
+        {
+          img: "/images/241005-saitama-plateau.jpg",
+          link: "https://civictechsaitama1005.peatix.com/",
+        },
+        {
+          img: "/images/240907UDCkickoff.jpg",
+          link: "https://civictechsaitama0907.peatix.com/view",
+        },
+        {
+          img: "/images/project/project_shindan.jpg",
+          link: "https://www.civictechsaitama.com/project/shindan/",
+        },
+        {
+          img: "/images/project/project_table.jpg",
+          link: "https://www.civictechsaitama.com/project/kyouzai/",
+        },
+        {
+          img: "/images/project/project_kyouzai.jpg",
+          link: "https://www.civictechsaitama.com/project/table/",
+        },
       ],
     };
   },
@@ -54,6 +71,11 @@ export default {
     justify-content: center;
     height: 24vw;
     max-height: 400px;
+
+    // マウスオン時透過率を変更
+    &:hover {
+      opacity: 0.8;
+    }
 
     img {
       width: 100%;
