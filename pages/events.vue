@@ -50,10 +50,13 @@ const events = await queryContent("/data")
     flex-wrap: wrap;
 
     li {
-      width: calc(100% / 3);
+      width: calc(100% / 4);
       margin: 0;
-      padding: 3px 6px;
+      padding: 0;
       box-sizing: border-box;
+      &:hover {
+        opacity: 0.5;
+      }
 
       a img {
         width: 100%;

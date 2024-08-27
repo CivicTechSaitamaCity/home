@@ -6,16 +6,20 @@
         <h2 id="news">News</h2>
         <ul>
           <li v-for="(article, index) in news" :key="index">
-            <span class="news-date">{{ formatDate(article.date) }}</span>
-
-            <div v-if="article.eventDate" class="event-date">
-              <span class="event-date-text">開催日</span>
-              {{ formatDate(article.eventDate) }}
+            <div class="news-box">
+              <div>
+                <span class="news-date">{{ formatDate(article.date) }}</span>
+              </div>
+              <div>
+                <div v-if="article.eventDate" class="event-date">
+                  <span class="event-date-text">開催日</span>
+                  {{ formatDate(article.eventDate) }}
+                </div>
+                <a class="news-link" :href="article.link">
+                  <span>{{ article.title }}</span>
+                </a>
+              </div>
             </div>
-
-            <a class="news-link" :href="article.link">
-              <span>{{ article.title }}</span>
-            </a>
           </li>
         </ul>
         <span>
@@ -83,14 +87,14 @@
 
 <script setup>
 const news = await queryContent("/data")
-  .limit(10)
+  .limit(8)
   .sort({ eventDate: -1 })
   .sort({ date: -1 })
   .where({ date: { $gt: new Date(2020) } })
   .find();
 
 const events = await queryContent("/data")
-  .limit(9)
+  .limit(8)
   .sort({ eventDate: -1 })
   .where({ eventDate: { $gt: new Date(2020) } })
   .find();
@@ -165,12 +169,18 @@ section {
     }
   }
 
+  /**
+   * News
+   */
   #news + ul {
     list-style-type: none;
     padding: 0 8px;
 
+    .news-box {
+      display: flex;
+    }
     .news-date {
-      margin-right: 16px;
+      margin-right: 8px;
       font-weight: bold;
       font-size: 16px;
     }
@@ -178,11 +188,14 @@ section {
     .event-date {
       font-size: 14px;
       display: inline-block;
-      margin-right: 16px;
+      margin-right: 4px;
+
       &-text {
         color: #000;
-        border: 1px solid;
-        padding: 4px;
+        background-color: white;
+        border: 1px solid #000;
+        border-radius: 4px;
+        padding: 2px;
       }
     }
 
@@ -199,13 +212,24 @@ section {
     flex-wrap: wrap;
 
     li {
-      width: calc(100% / 3);
+      width: calc(100% / 4);
       margin: 0;
-      padding: 3px 6px;
+      padding: 0;
       box-sizing: border-box;
-
+      &:hover {
+        opacity: 0.5;
+      }
       a img {
         width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    #event + ul,
+    #project + ul {
+      li {
+        width: calc(100% / 2);
       }
     }
   }
