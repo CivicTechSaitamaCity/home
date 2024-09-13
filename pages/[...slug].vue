@@ -21,6 +21,5 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  // margin: auto;
 }
 </style>
