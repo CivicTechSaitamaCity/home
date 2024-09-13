@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>開催レポート</h2>
+    <h2>news-report</h2>
     <article>
       <nuxt-link
         v-for="(article, index) in reports"
