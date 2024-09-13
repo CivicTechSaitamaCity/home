@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Report</h2>
+    <h2>開催レポート</h2>
     <article>
       <nuxt-link
         v-for="(article, index) in reports"
@@ -13,7 +13,10 @@
   </div>
 </template>
 <script setup>
-const reports = await queryContent("/report").find();
+const reports = await queryContent("/data")
+  .sort({ reportDate: -1 })
+  .where({ reportDate: { $gt: new Date(2020) } })
+  .find();
 // console.log(reports)
 </script>
 <style lang="scss" scoped>
