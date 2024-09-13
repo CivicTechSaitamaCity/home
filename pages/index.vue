@@ -18,6 +18,11 @@
                 <a class="news-link" :href="article.link">
                   <span>{{ article.title }}</span>
                 </a>
+                <nuxt-link :to="article._path" class="news-link">
+                  <span v-if="article.reportDate" class="news-report"
+                    >レポート</span
+                  >
+                </nuxt-link>
               </div>
             </div>
           </li>
@@ -201,6 +206,15 @@ section {
 
     .news-link {
       text-decoration: none;
+    }
+
+    .news-report {
+      font-size: 16px;
+      color: white;
+      background-color: rgb(83, 139, 0);
+      border: 1px solid white;
+      border-radius: 4px;
+      padding: 2px;
     }
   }
 

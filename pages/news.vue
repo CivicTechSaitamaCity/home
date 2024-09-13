@@ -5,16 +5,25 @@
         <h2 id="news">News</h2>
         <ul>
           <li v-for="(article, index) in news" :key="index">
-            <span class="news-date">{{ formatDate(article.date) }}</span>
-
-            <div v-if="article.eventDate" class="event-date">
-              <span class="event-date-text">開催日</span>
-              {{ formatDate(article.eventDate) }}
+            <div class="news-box">
+              <div>
+                <span class="news-date">{{ formatDate(article.date) }}</span>
+              </div>
+              <div>
+                <div v-if="article.eventDate" class="event-date">
+                  <span class="event-date-text">開催日</span>
+                  {{ formatDate(article.eventDate) }}
+                </div>
+                <a class="news-link" :href="article.link">
+                  <span>{{ article.title }}</span>
+                </a>
+                <nuxt-link :to="article._path" class="news-link">
+                  <span v-if="article.reportDate" class="news-report"
+                    >レポート</span
+                  >
+                </nuxt-link>
+              </div>
             </div>
-
-            <a class="news-link" :href="article.link">
-              <span>{{ article.title }}</span>
-            </a>
           </li>
         </ul>
         <span>
@@ -51,12 +60,18 @@ const news = await queryContent("/data")
   }
 }
 
+/**
+   * News
+   */
 #news + ul {
   list-style-type: none;
   padding: 0 8px;
 
+  .news-box {
+    display: flex;
+  }
   .news-date {
-    margin-right: 16px;
+    margin-right: 8px;
     font-weight: bold;
     font-size: 16px;
   }
@@ -64,16 +79,28 @@ const news = await queryContent("/data")
   .event-date {
     font-size: 14px;
     display: inline-block;
-    margin-right: 16px;
+    margin-right: 4px;
+
     &-text {
       color: #000;
-      border: 1px solid;
-      padding: 4px;
+      background-color: white;
+      border: 1px solid #000;
+      border-radius: 4px;
+      padding: 2px;
     }
   }
 
   .news-link {
     text-decoration: none;
+  }
+
+  .news-report {
+    font-size: 16px;
+    color: white;
+    background-color: rgb(83, 139, 0);
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 2px;
   }
 }
 </style>
