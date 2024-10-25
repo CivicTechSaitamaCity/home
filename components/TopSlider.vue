@@ -26,24 +26,16 @@ export default {
     return {
       items: [
         {
+          link: "https://www.facebook.com/events/9407351342614037",
+          img: "/images/241107-small-digital-consult.jpg",
+        },
+        {
           img: "/images/241005-saitama-plateau.jpg",
           link: "https://civictechsaitama1005.peatix.com/",
         },
         {
           img: "/images/240907UDCkickoff.jpg",
           link: "https://civictechsaitama0907.peatix.com/view",
-        },
-        {
-          img: "/images/project/project_shindan.jpg",
-          link: "https://www.civictechsaitama.com/project/shindan/",
-        },
-        {
-          img: "/images/project/project_table.jpg",
-          link: "https://www.civictechsaitama.com/project/kyouzai/",
-        },
-        {
-          img: "/images/project/project_kyouzai.jpg",
-          link: "https://www.civictechsaitama.com/project/table/",
         },
       ],
     };
