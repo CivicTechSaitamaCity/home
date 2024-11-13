@@ -2959,23 +2959,23 @@ embla-carousel-autoplay@^8.3.1:
   resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-8.3.1.tgz#62b45cf55dc001d82b2ac1829f6b3207e7af35a6"
   integrity sha512-L8THF1AJJSQtlNa1wZ6lEKh/CiZssE3TsVFtabQNsS+pc1O1O/YTIYCC3khdQAztGMOBf3WfVDIY/4AIfQj3JQ==
 
-embla-carousel-reactive-utils@8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.2.1.tgz#c62fdb6f77c6dcd68bcdaba62523acacb8e633fc"
-  integrity sha512-LXMVOOyv09ZKRxRQXYMX1FpVGcypsuxdcidNcNlBQUN2mK7hkmjVFQwwhfnnY39KMi88XYnYPBgMxfTe0vxSrA==
+embla-carousel-reactive-utils@8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.3.1.tgz#8e92407f92f55e5f38ef22d24c018077476f1e11"
+  integrity sha512-Js6rTTINNGnUGPu7l5kTcheoSbEnP5Ak2iX0G9uOoI8okTNLMzuWlEIpYFd1WP0Sq82FFcLkKM2oiO6jcElZ/Q==
 
-embla-carousel-vue@^8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/embla-carousel-vue/-/embla-carousel-vue-8.2.1.tgz#66266da70ab07112e1e14cd84b6704f3c07aa854"
-  integrity sha512-yC1kD9VaFZNf1WYsEEL027kMar+LCHNfhzDgMx5yf2xH3nxFVx/DVqpZSqVWvPm3onKvZQ8xeoOQ80tFKFyYnw==
+embla-carousel-vue@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/embla-carousel-vue/-/embla-carousel-vue-8.3.1.tgz#cebad715f8c700850eaad668a9d58056ba223692"
+  integrity sha512-PfCvJeHLQgI0BfFkGDEeOcYJLhJzzTrSg8ukUJJWHnFJ00S//f3vG6U4sKGOELEnEW7Zj+JOEV/xRuX7DbMV8g==
   dependencies:
-    embla-carousel "8.2.1"
-    embla-carousel-reactive-utils "8.2.1"
+    embla-carousel "8.3.1"
+    embla-carousel-reactive-utils "8.3.1"
 
-embla-carousel@8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-8.2.1.tgz#d156be420f47d9f61f444eb789c9901cce43f7f8"
-  integrity sha512-9mTDtyMZJhFuuW5pixhTT4iLiJB1l3dH3IpXUKCsgLlRlHCiySf/wLKy5xIAzmxIsokcQ50xea8wi7BCt0+Rxg==
+embla-carousel@8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-8.3.1.tgz#8f5dcd0dc001977efd2bca54d620b6e6736a1a85"
+  integrity sha512-DutFjtEO586XptDn4cwvBJwsR/8fMa4jUk5Jk2g+/elKgu8mdn0Z2sx33g4JskvbLc1/6P8Xg4QlfELGJFcP5A==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
