@@ -26,8 +26,8 @@ export default {
     return {
       items: [
         {
-          link: "https://www.facebook.com/events/9407351342614037",
-          img: "/images/241107-small-digital-consult.jpg",
+          link: "https://www.facebook.com/events/514366191091379",
+          img: "/images/250116-small-digital-consult.png",
         },
         {
           img: "/images/241005-saitama-plateau.jpg",
