@@ -30,8 +30,8 @@ export default {
           img: "/images/250309-plteau-unity-workshop.png",
         },
         {
-          link: "https://www.facebook.com/events/589890133803746/",
-          img: "/images/250206-small-digital-consult.png",
+          link: "https://www.facebook.com/events/1255969942135398",
+          img: "/images/250313-small-digital-consult.png",
         },
         {
           img: "/images/241005-saitama-plateau.jpg",
