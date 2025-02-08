@@ -26,6 +26,10 @@ export default {
     return {
       items: [
         {
+          link: "https://civictechsaitama202503.peatix.com/",
+          img: "/images/250309-plteau-unity-workshop.png",
+        },
+        {
           link: "https://www.facebook.com/events/589890133803746/",
           img: "/images/250206-small-digital-consult.png",
         },
