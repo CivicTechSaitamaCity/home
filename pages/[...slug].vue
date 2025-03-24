@@ -12,6 +12,11 @@ h2 {
   }
 }
 
+p {
+  font-size: 1.5rem;
+  line-height: 150%;
+}
+
 main {
   max-width: 1000px;
   margin: auto;
@@ -21,5 +26,6 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 16px auto;
 }
 </style>
