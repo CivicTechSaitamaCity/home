@@ -25,14 +25,14 @@ export default {
   data() {
     return {
       items: [
-        {
+      {
+          link: "https://fb.me/e/39HbJDWar",
+          img: "/images/250501-small-digital-consult.png",
+        },        {
           link: "https://civictechsaitama202503.peatix.com/",
           img: "/images/250309-plteau-unity-workshop.png",
         },
-        {
-          link: "https://www.facebook.com/events/1255969942135398",
-          img: "/images/250313-small-digital-consult.png",
-        },
+
         {
           img: "/images/241005-saitama-plateau.jpg",
           link: "https://civictechsaitama1005.peatix.com/",
