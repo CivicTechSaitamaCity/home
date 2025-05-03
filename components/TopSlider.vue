@@ -25,14 +25,18 @@ export default {
   data() {
     return {
       items: [
-      {
+        {
+          link: "https://wikiyono.peatix.com/",
+          img: " /images/250524-wikipedia-town.png",
+        },
+        {
           link: "https://fb.me/e/39HbJDWar",
           img: "/images/250501-small-digital-consult.png",
-        },        {
+        },
+        {
           link: "https://civictechsaitama202503.peatix.com/",
           img: "/images/250309-plteau-unity-workshop.png",
         },
-
         {
           img: "/images/241005-saitama-plateau.jpg",
           link: "https://civictechsaitama1005.peatix.com/",
