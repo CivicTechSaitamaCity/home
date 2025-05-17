@@ -26,6 +26,10 @@ export default {
     return {
       items: [
         {
+          link: " https://fb.me/e/2HCZD6HNc",
+          img: "/images/250605-small-digital-consult.png",
+        },
+        {
           link: "https://wikiyono.peatix.com/",
           img: " /images/250524-wikipedia-town.png",
         },
