@@ -16,7 +16,7 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@master
       - name: Use Node.js based on .node-version
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: '.node-version'
       - name: Install NPM packages
