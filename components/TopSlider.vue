@@ -25,6 +25,14 @@ export default {
   data() {
     return {
       items: [
+      {
+        link: "https://fb.me/e/76ZcU2xZe",
+        img: "/images/251002-small-digital-consult.png",
+      },
+        {
+          link: "https://fb.me/e/9bmIe3dug",
+          img: "/images/250915-omiya-mokumoku.png",
+        },
         {
           link: "https://fb.me/e/1N6RJRiRds",
           img: "/images/250905-small-digital-consult.png",        },
