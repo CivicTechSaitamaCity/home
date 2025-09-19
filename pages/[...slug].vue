@@ -1,8 +1,8 @@
 <template>
   <main>
-    <h2>Report</h2>
-    <ContentDoc />
-    <nuxt-link to="/report">BACK</nuxt-link>
+  <h2>Report</h2>
+  <ContentDoc />
+  <NuxtLink to="/report">BACK</NuxtLink>
   </main>
 </template>
 <style lang="scss">

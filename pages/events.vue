@@ -20,10 +20,12 @@
 </template>
 
 <script setup>
-const events = await queryContent("/data")
-  .sort({ eventDate: -1 })
-  .where({ eventDate: { $gt: new Date(2020) } })
-  .find();
+const { data: events } = await useAsyncData('events-list', () =>
+  queryContent('/data')
+    .sort({ eventDate: -1 })
+    .where({ eventDate: { $gt: new Date(2020) } })
+    .find()
+);
 </script>
 
 <style lang="scss" scoped>

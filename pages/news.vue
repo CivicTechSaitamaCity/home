@@ -17,11 +17,11 @@
                 <a class="news-link" :href="article.link">
                   <span>{{ article.title }}</span>
                 </a>
-                <nuxt-link :to="article._path" class="news-link">
+                <NuxtLink :to="article._path" class="news-link">
                   <span v-if="article.reportDate" class="news-report"
                     >レポート</span
                   >
-                </nuxt-link>
+                </NuxtLink>
               </div>
             </div>
           </li>
@@ -35,11 +35,13 @@
 </template>
 
 <script setup>
-const news = await queryContent("/data")
-  .sort({ eventDate: -1 })
-  .sort({ date: -1 })
-  .where({ date: { $gt: new Date(2020) } })
-  .find();
+const { data: news } = await useAsyncData('news-list', () =>
+  queryContent('/data')
+    .sort({ eventDate: -1 })
+    .sort({ date: -1 })
+    .where({ date: { $gt: new Date(2020) } })
+    .find()
+);
 </script>
 
 <style lang="scss" scoped>
