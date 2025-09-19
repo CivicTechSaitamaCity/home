@@ -10,6 +10,8 @@
   "devDependencies": {
     "@nuxt/content": "^2.0.0",
     "nuxt": "^3.8.0",
+    "@vue/compiler-sfc": "^3.5.17",
+    "vite": "^7.1.6",
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
