@@ -7,7 +7,7 @@
           <li
             v-for="(event, index) in events"
             :key="index"
-            :class="{ 'is-hidden': event.thumb === none }"
+            :class="{ 'is-hidden': !event.thumb || event.thumb === 'none' }"
           >
             <a :href="event.link">
               <img :src="event.thumb" alt />
