@@ -26,6 +26,10 @@ export default {
     return {
       items: [
       {
+        link: "https://urbandata-challenge.jp/news/2025-2nd-symposium/",
+        img: "/images/251025-udc2025-2nd-symposium.png",
+      },
+      {
         link: "https://fb.me/e/76ZcU2xZe",
         img: "/images/251002-small-digital-consult.png",
       },
