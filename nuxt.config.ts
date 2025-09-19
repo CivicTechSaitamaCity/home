@@ -1,34 +1,33 @@
 export default defineNuxtConfig({
-    modules: ['@nuxt/content'],
+  modules: ['@nuxt/content'],
 
-    content: {
-        // Nuxt Content v2 options
-        // See: https://content.nuxtjs.org/guide
-        documentDriven: false,
-        // other content options can be added here if needed
-    },
+  content: {
+    // Nuxt Content v2 options
+    // See: https://content.nuxtjs.org/guide
+    documentDriven: false,
+  },
 
-    app: {
-        head: {
-            title: 'シビックテックさいたま',
-            htmlAttrs: { lang: 'ja' },
-            meta: [
-                { charset: 'utf-8' },
-                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-                { hid: 'description', name: 'description', content: '' },
-                { name: 'format-detection', content: 'telephone=no' }
-            ],
-            link: [
-                { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap' },
-                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap' },
-                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Righteous&display=swap' }
-            ]
-        }
-    },
-
-    // compatibilityDate can be omitted or updated as needed
-    typescript: {
-        strict: false
+  app: {
+    head: {
+      title: 'シビックテックさいたま',
+      htmlAttrs: { lang: 'ja' },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: '' },
+        { name: 'format-detection', content: 'telephone=no' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Righteous&display=swap' }
+      ]
     }
+  },
+
+  // compatibilityDate can be omitted or updated as needed
+  typescript: {
+    strict: false
+  }
 });
