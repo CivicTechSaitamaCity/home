@@ -9,13 +9,11 @@ export default defineNuxtPlugin((nuxtApp) => {
     }
   })
 
-  // Debug logging to help verify analytics during development
+  // Client-only hook: track navigation finished (no debug logging)
   if (process.client) {
-    console.log('[vue-gtag] initialized (client)')
-
     nuxtApp.hook('page:finish', (context) => {
       // page:finish runs after navigation is complete
-      console.log('[vue-gtag] page:finish', context?.route?.path || '')
+      // vue-gtag will send events internally; keep hook for future non-verbose handling
     })
   }
 })
