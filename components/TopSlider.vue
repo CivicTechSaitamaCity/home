@@ -25,21 +25,23 @@ export default {
   data() {
     return {
       items: [
-      {
-        link: "https://urbandata-challenge.jp/news/2025-2nd-symposium/",
-        img: "/images/251025-udc2025-2nd-symposium.png",
-      },
-      {
-        link: "https://fb.me/e/76ZcU2xZe",
-        img: "/images/251002-small-digital-consult.png",
-      },
+        {
+          link: "https://fb.me/e/7sCNVMFlY",
+          img: "/images/251106-small-digital-consult.png",
+        },
+        {
+          link: "https://urbandata-challenge.jp/news/2025-2nd-symposium/",
+          img: "/images/251025-udc2025-2nd-symposium.png",
+        },
+
         {
           link: "https://fb.me/e/9bmIe3dug",
           img: "/images/250915-omiya-mokumoku.png",
         },
         {
           link: "https://fb.me/e/1N6RJRiRds",
-          img: "/images/250905-small-digital-consult.png",        },
+          img: "/images/250905-small-digital-consult.png",
+        },
         {
           link: "https://wikiyono.peatix.com/",
           img: " /images/250524-wikipedia-town.png",
