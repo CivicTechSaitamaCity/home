@@ -12,10 +12,12 @@ h2 {
   }
 }
 
+/*
 p {
   font-size: 1.5rem;
   line-height: 150%;
 }
+*/
 
 main {
   max-width: 1000px;
