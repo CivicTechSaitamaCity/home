@@ -26,8 +26,8 @@ export default {
     return {
       items: [
         {
-          link: "https://fb.me/e/7sCNVMFlY",
-          img: "/images/251106-small-digital-consult.png",
+          link: "https://fb.me/e/74mOctgUK",
+          img: "/images/251204-small-digital-consult.png",
         },
         {
           link: "https://urbandata-challenge.jp/news/2025-2nd-symposium/",
