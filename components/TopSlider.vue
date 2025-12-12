@@ -26,6 +26,10 @@ export default {
     return {
       items: [
         {
+          link: "https://fb.me/e/5h2z14aDd",
+          img: "/images/260110-small-digital-consult.png",
+        },
+        {
           link: "https://fb.me/e/74mOctgUK",
           img: "/images/251204-small-digital-consult.png",
         },
