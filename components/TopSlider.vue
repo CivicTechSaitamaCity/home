@@ -26,6 +26,14 @@ export default {
     return {
       items: [
         {
+          link: "https://civictechsaitama202602.peatix.com/",
+          img: "/images/260211-plateau-ideathon.png",
+        },
+        {
+          link: "https://fb.me/e/77BjGmefe",
+          img: "/images/260205-small-digital-consult.png",
+        },
+        {
           link: "https://fb.me/e/5h2z14aDd",
           img: "/images/260110-small-digital-consult.png",
         },
