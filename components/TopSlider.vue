@@ -30,15 +30,15 @@ export default {
           img: "/images/260211-plateau-ideathon.png",
         },
         {
-          link: "https://fb.me/e/77BjGmefe",
+          link: "https://facebook.com/events/3311611065661497/",
           img: "/images/260205-small-digital-consult.png",
         },
         {
-          link: "https://fb.me/e/5h2z14aDd",
+          link: "https://facebook.com/events/1412551763917552/",
           img: "/images/260110-small-digital-consult.png",
         },
         {
-          link: "https://fb.me/e/74mOctgUK",
+          link: "https://facebook.com/events/2252286891939278/",
           img: "/images/251204-small-digital-consult.png",
         },
         {
@@ -47,11 +47,11 @@ export default {
         },
 
         {
-          link: "https://fb.me/e/9bmIe3dug",
+          link: "https://facebook.com/events/1669635770372144/",
           img: "/images/250915-omiya-mokumoku.png",
         },
         {
-          link: "https://fb.me/e/1N6RJRiRds",
+          link: "https://facebook.com/events/2206423643197052/",
           img: "/images/250905-small-digital-consult.png",
         },
         {
