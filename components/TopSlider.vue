@@ -26,6 +26,10 @@ export default {
     return {
       items: [
         {
+          link: "https://www.facebook.com/events/2943359932540693/",
+          img: "/images/260305-small-digital-consult.png",
+        },
+        {
           link: "https://civictechsaitama202602.peatix.com/",
           img: "/images/260211-plateau-ideathon.png",
         },
