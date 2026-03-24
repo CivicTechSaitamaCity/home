@@ -26,24 +26,16 @@ export default {
     return {
       items: [
         {
+          link: "https://www.facebook.com/events/4425766640997405/",
+          img: "/images/260402-small-digital-consult.webp",
+        },
+                {
           link: "https://www.facebook.com/events/2943359932540693/",
           img: "/images/260305-small-digital-consult.png",
         },
         {
           link: "https://civictechsaitama202602.peatix.com/",
           img: "/images/260211-plateau-ideathon.png",
-        },
-        {
-          link: "https://facebook.com/events/3311611065661497/",
-          img: "/images/260205-small-digital-consult.png",
-        },
-        {
-          link: "https://facebook.com/events/1412551763917552/",
-          img: "/images/260110-small-digital-consult.png",
-        },
-        {
-          link: "https://facebook.com/events/2252286891939278/",
-          img: "/images/251204-small-digital-consult.png",
         },
         {
           link: "https://urbandata-challenge.jp/news/2025-2nd-symposium/",

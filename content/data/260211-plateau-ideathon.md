@@ -4,7 +4,7 @@ date: 2026-02-11
 eventDate: 2026-01-17
 reportDate: 2026-02-17
 link: https://civictechsaitama202602.peatix.com/
-thumb: /images/report/260211/260211-plateau-ideathon.png
+thumb: /images/260211-plateau-ideathon.png
 ---
 # 【開催レポート】PLATEAUアイデアソン in さいたま 2025
 
