@@ -18,7 +18,7 @@
                 <a class="news-link" :href="article.link">
                   <span>{{ article.title }}</span>
                 </a>
-                <nuxt-link :to="article._path" class="news-link">
+                <nuxt-link :to="article.path" class="news-link">
                   <span v-if="article.reportDate" class="news-report"
                     >レポート</span
                   >
@@ -35,7 +35,7 @@
 
     <article>
       <div id="project" class="nuxt-content">
-        <ContentDoc :head="false" path="projects" />
+        <ContentRenderer v-if="projectsDoc" :value="projectsDoc" />
       </div>
     </article>
 
@@ -46,7 +46,7 @@
           <li
             v-for="(event, index) in events"
             :key="index"
-            :class="{ 'is-hidden': event.thumb === none }"
+            :class="{ 'is-hidden': !event.thumb }"
           >
             <a :href="event.link">
               <img :src="event.thumb" alt />
@@ -61,13 +61,13 @@
 
     <article>
       <div id="message" class="nuxt-content">
-        <ContentDoc :head="false" path="message" />
+        <ContentRenderer v-if="messageDoc" :value="messageDoc" />
       </div>
     </article>
 
     <article>
       <div id="vision" class="nuxt-content">
-        <ContentDoc :head="false" path="vision" />
+        <ContentRenderer v-if="visionDoc" :value="visionDoc" />
       </div>
     </article>
 
@@ -91,18 +91,24 @@
 </template>
 
 <script setup>
-const news = await queryContent("/data")
+const news = await queryCollection("content")
+  .where("path", "LIKE", "/data/%")
+  .where("date", ">", "2020-01-01")
+  .order("eventDate", "DESC")
+  .order("date", "DESC")
   .limit(8)
-  .sort({ eventDate: -1 })
-  .sort({ date: -1 })
-  .where({ date: { $gt: new Date(2020) } })
-  .find();
+  .all();
 
-const events = await queryContent("/data")
+const events = await queryCollection("content")
+  .where("path", "LIKE", "/data/%")
+  .where("eventDate", ">", "2020-01-01")
+  .order("eventDate", "DESC")
   .limit(8)
-  .sort({ eventDate: -1 })
-  .where({ eventDate: { $gt: new Date(2020) } })
-  .find();
+  .all();
+
+const projectsDoc = await queryCollection("content").path("/projects").first();
+const messageDoc = await queryCollection("content").path("/message").first();
+const visionDoc = await queryCollection("content").path("/vision").first();
 </script>
 
 <style lang="scss" scoped>

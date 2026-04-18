@@ -1,10 +1,16 @@
 <template>
   <main>
     <h2>Report</h2>
-    <ContentDoc />
+    <ContentRenderer v-if="page" :value="page" />
     <nuxt-link to="/report">BACK</nuxt-link>
   </main>
 </template>
+<script setup>
+const route = useRoute();
+const { data: page } = await useAsyncData(route.path, () =>
+  queryCollection("content").path(route.path).first()
+);
+</script>
 <style lang="scss">
 h2 {
   a {

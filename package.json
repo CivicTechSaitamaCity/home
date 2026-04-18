@@ -1,21 +1,26 @@
 {
   "private": true,
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "node scripts/generate.mjs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.13.4",
-    "@nuxt/image": "^1.11.0",
-    "nuxt": "3.17.7",
+    "@nuxt/content": "^3.13.0",
+    "@nuxt/image": "^2.0.0",
+    "nuxt": "4.4.2",
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
-    "embla-carousel-autoplay": "^8.5.2",
-    "embla-carousel-vue": "^8.5.2",
-    "sass": "^1.83.4"
-  }
+    "better-sqlite3": "^12.9.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-vue": "^8.6.0",
+    "sass": "^1.99.0"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

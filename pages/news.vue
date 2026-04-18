@@ -17,7 +17,7 @@
                 <a class="news-link" :href="article.link">
                   <span>{{ article.title }}</span>
                 </a>
-                <nuxt-link :to="article._path" class="news-link">
+                <nuxt-link :to="article.path" class="news-link">
                   <span v-if="article.reportDate" class="news-report"
                     >レポート</span
                   >
@@ -35,11 +35,12 @@
 </template>
 
 <script setup>
-const news = await queryContent("/data")
-  .sort({ eventDate: -1 })
-  .sort({ date: -1 })
-  .where({ date: { $gt: new Date(2020) } })
-  .find();
+const news = await queryCollection("content")
+  .where("path", "LIKE", "/data/%")
+  .where("date", ">", "2020-01-01")
+  .order("eventDate", "DESC")
+  .order("date", "DESC")
+  .all();
 </script>
 
 <style lang="scss" scoped>

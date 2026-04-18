@@ -1,4 +1,17 @@
 export default defineNuxtConfig({
+    sourcemap: {
+            client: false,
+            server: false,
+    },
+
+  vite: {
+      build: {
+          modulePreload: {
+              polyfill: false,
+          },
+      },
+  },
+
   modules: [
       '@nuxt/content',
   ],
