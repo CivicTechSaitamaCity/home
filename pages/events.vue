@@ -7,7 +7,7 @@
           <li
             v-for="(event, index) in events"
             :key="index"
-            :class="{ 'is-hidden': event.thumb === none }"
+            :class="{ 'is-hidden': !event.thumb }"
           >
             <a :href="event.link">
               <img :src="event.thumb" alt />
@@ -20,10 +20,11 @@
 </template>
 
 <script setup>
-const events = await queryContent("/data")
-  .sort({ eventDate: -1 })
-  .where({ eventDate: { $gt: new Date(2020) } })
-  .find();
+const events = await queryCollection("content")
+  .where("path", "LIKE", "/data/%")
+  .where("eventDate", ">", "2020-01-01")
+  .order("eventDate", "DESC")
+  .all();
 </script>
 
 <style lang="scss" scoped>

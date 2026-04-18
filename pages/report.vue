@@ -5,7 +5,7 @@
       <nuxt-link
         v-for="(article, index) in reports"
         :key="index"
-        :to="article._path"
+        :to="article.path"
       >
         <div class="report">
           <div class="report-date">{{ formatDate(article.reportDate) }}</div>
@@ -16,10 +16,11 @@
   </div>
 </template>
 <script setup>
-const reports = await queryContent("/data")
-  .sort({ reportDate: -1 })
-  .where({ reportDate: { $gt: new Date(2020) } })
-  .find();
+const reports = await queryCollection("content")
+  .where("path", "LIKE", "/data/%")
+  .where("reportDate", ">", "2020-01-01")
+  .order("reportDate", "DESC")
+  .all();
 // console.log(reports)
 
 /**
@@ -29,8 +30,9 @@ const reports = await queryContent("/data")
  */
 
 const getH1Text = (article) => {
-  const h1 = article.body.children.find((child) => child.tag === "h1");
-  return h1 ? h1.children[0].value : article.title;
+  const children = article?.body?.children || [];
+  const h1 = children.find((child) => child.tag === "h1");
+  return h1?.children?.[0]?.value || article.title;
 };
 </script>
 <style lang="scss" scoped>
