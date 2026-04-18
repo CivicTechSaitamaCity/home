@@ -26,10 +26,14 @@ export default {
     return {
       items: [
         {
+          link: "https://www.facebook.com/events/931222093286395/",
+          img: "/images/260501-small-digital-consult.webp",
+        },
+        {
           link: "https://www.facebook.com/events/4425766640997405/",
           img: "/images/260402-small-digital-consult.webp",
         },
-                {
+        {
           link: "https://www.facebook.com/events/2943359932540693/",
           img: "/images/260305-small-digital-consult.png",
         },
