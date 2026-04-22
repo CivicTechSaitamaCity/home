@@ -49,5 +49,31 @@ export default defineNuxtConfig({
       },
   },
 
-  compatibilityDate: '2024-07-18'
+  compatibilityDate: '2024-07-18',
+
+  hooks: {
+    async 'build:done'() {
+      if (process.env.npm_lifecycle_event?.includes('generate')) {
+        const { generateSitemap } = await import('./utils/sitemap');
+        const { join } = await import('path');
+        const { promises: fs } = await import('fs');
+
+        // Read domain from CNAME file
+        let baseUrl = process.env.SITE_URL || 'https://otkzh.github.io';
+        try {
+          const cnamePath = join(process.cwd(), 'public', 'CNAME');
+          const cnameContent = await fs.readFile(cnamePath, 'utf-8');
+          const domain = cnameContent.trim();
+          if (domain) {
+            baseUrl = `https://${domain}`;
+          }
+        } catch (error) {
+          console.warn('Could not read CNAME file, using default URL');
+        }
+
+        const outputPath = join(process.cwd(), 'public', 'sitemap.xml');
+        await generateSitemap(baseUrl, outputPath);
+      }
+    }
+  }
 })
