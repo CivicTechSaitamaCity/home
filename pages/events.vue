@@ -32,10 +32,11 @@ const events = await queryCollection("content")
   // width: 100%;
   max-width: 1000px;
   margin: auto;
+  font-family: "Noto Sans JP", cursive;
   font-size: clamp(18px, 1vw, 24px);
 
   h2 {
-    font-family: "Noto Sans JP", cursive;
+    font-family: cursive;
     width: 60%;
     margin: 20px auto 20px;
     font-size: 3rem;
