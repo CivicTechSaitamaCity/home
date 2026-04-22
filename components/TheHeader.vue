@@ -59,6 +59,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   position: relative;
+  z-index: 10; // ← これを追加
 
   &__wrapper {
     display: flex;
