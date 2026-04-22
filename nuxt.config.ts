@@ -41,10 +41,6 @@ export default defineNuxtConfig({
                   rel: 'stylesheet',
                   href: 'https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap',
               },
-              {
-                  rel: 'stylesheet',
-                  href: 'https://fonts.googleapis.com/css2?family=Righteous&display=swap',
-              },
           ],
       },
   },
