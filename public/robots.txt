@@ -1,0 +1,7 @@
+# Generated robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /*.json$
+
+Sitemap: https://www.civictechsaitama.com/sitemap.xml
