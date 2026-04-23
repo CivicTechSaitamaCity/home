@@ -82,6 +82,34 @@ yarn dev
 yarn build
 ```
 
+### 型チェック
+
+```bash
+yarn typecheck
+```
+
+### Lint
+
+型チェックとフォーマット検証をまとめて実行します。
+
+```bash
+yarn lint
+```
+
+### 自動整形
+
+HTML、Markdown、CSS、JavaScript、TypeScript などを Prettier で整形します。
+
+```bash
+yarn format
+```
+
+整形差分の確認だけをしたい場合:
+
+```bash
+yarn format:check
+```
+
 ### 静的サイト生成
 
 ```bash
@@ -98,5 +126,6 @@ yarn preview
 
 1. `content/` 配下のMarkdownを追加・修正
 2. `yarn dev` で表示確認
-3. 必要に応じて `yarn generate` で生成結果を確認
-4. コミット・デプロイ
+3. `yarn lint` で型チェックとフォーマット検証
+4. 必要に応じて `yarn generate` で生成結果を確認
+5. コミット・デプロイ
