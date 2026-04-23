@@ -8,7 +8,7 @@
 <script setup>
 const route = useRoute();
 const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection("content").path(route.path).first()
+  queryCollection('content').path(route.path).first(),
 );
 </script>
 <style lang="scss">

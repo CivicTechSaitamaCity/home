@@ -11,11 +11,24 @@
         aria-label="メニューを開閉"
         @click="toggleMenu"
       >
-        <span class="header__toggle-line" :class="{ 'is-open': isMenuOpen }"></span>
-        <span class="header__toggle-line" :class="{ 'is-open': isMenuOpen }"></span>
-        <span class="header__toggle-line" :class="{ 'is-open': isMenuOpen }"></span>
+        <span
+          class="header__toggle-line"
+          :class="{ 'is-open': isMenuOpen }"
+        ></span>
+        <span
+          class="header__toggle-line"
+          :class="{ 'is-open': isMenuOpen }"
+        ></span>
+        <span
+          class="header__toggle-line"
+          :class="{ 'is-open': isMenuOpen }"
+        ></span>
       </button>
-      <ul id="site-menu" class="header__menu" :class="{ 'is-open': isMenuOpen }">
+      <ul
+        id="site-menu"
+        class="header__menu"
+        :class="{ 'is-open': isMenuOpen }"
+      >
         <li><a href="/#news" @click="closeMenu">NEWS</a></li>
         <li><a href="/#project" @click="closeMenu">PROJECT</a></li>
         <li><a href="/#event" @click="closeMenu">EVENT</a></li>
@@ -31,14 +44,14 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-    }
+    };
   },
   methods: {
     toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
+      this.isMenuOpen = !this.isMenuOpen;
     },
     closeMenu() {
-      this.isMenuOpen = false
+      this.isMenuOpen = false;
     },
   },
   head: {
@@ -53,7 +66,7 @@ export default {
       },
     ],
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -93,7 +106,9 @@ export default {
     width: 24px;
     height: 2px;
     background: #111;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
 
     &:nth-child(1).is-open {
       transform: translateY(7px) rotate(45deg);

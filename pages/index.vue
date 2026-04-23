@@ -91,24 +91,24 @@
 </template>
 
 <script setup>
-const news = await queryCollection("content")
-  .where("path", "LIKE", "/data/%")
-  .where("date", ">", "2020-01-01")
-  .order("eventDate", "DESC")
-  .order("date", "DESC")
+const news = await queryCollection('content')
+  .where('path', 'LIKE', '/data/%')
+  .where('date', '>', '2020-01-01')
+  .order('eventDate', 'DESC')
+  .order('date', 'DESC')
   .limit(8)
   .all();
 
-const events = await queryCollection("content")
-  .where("path", "LIKE", "/data/%")
-  .where("eventDate", ">", "2020-01-01")
-  .order("eventDate", "DESC")
+const events = await queryCollection('content')
+  .where('path', 'LIKE', '/data/%')
+  .where('eventDate', '>', '2020-01-01')
+  .order('eventDate', 'DESC')
   .limit(8)
   .all();
 
-const projectsDoc = await queryCollection("content").path("/projects").first();
-const messageDoc = await queryCollection("content").path("/message").first();
-const visionDoc = await queryCollection("content").path("/vision").first();
+const projectsDoc = await queryCollection('content').path('/projects').first();
+const messageDoc = await queryCollection('content').path('/message').first();
+const visionDoc = await queryCollection('content').path('/vision').first();
 </script>
 
 <style lang="scss" scoped>
@@ -164,7 +164,7 @@ section {
   // width: 100%;
   max-width: 1000px;
   margin: auto;
-  font-family: "Noto Sans JP", cursive;
+  font-family: 'Noto Sans JP', cursive;
   font-size: clamp(18px, 1vw, 24px);
 
   h2 {

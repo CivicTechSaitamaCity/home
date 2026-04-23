@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import emblaCarouselVue from "embla-carousel-vue";
-import Autoplay from "embla-carousel-autoplay";
+import emblaCarouselVue from 'embla-carousel-vue';
+import Autoplay from 'embla-carousel-autoplay';
 
 export default {
   setup() {
@@ -26,49 +26,49 @@ export default {
     return {
       items: [
         {
-          link: "https://www.facebook.com/events/931222093286395/",
-          img: "/images/260501-small-digital-consult.webp",
+          link: 'https://www.facebook.com/events/931222093286395/',
+          img: '/images/260501-small-digital-consult.webp',
         },
         {
-          link: "https://www.facebook.com/events/4425766640997405/",
-          img: "/images/260402-small-digital-consult.webp",
+          link: 'https://www.facebook.com/events/4425766640997405/',
+          img: '/images/260402-small-digital-consult.webp',
         },
         {
-          link: "https://www.facebook.com/events/2943359932540693/",
-          img: "/images/260305-small-digital-consult.png",
+          link: 'https://www.facebook.com/events/2943359932540693/',
+          img: '/images/260305-small-digital-consult.png',
         },
         {
-          link: "https://civictechsaitama202602.peatix.com/",
-          img: "/images/260211-plateau-ideathon.png",
+          link: 'https://civictechsaitama202602.peatix.com/',
+          img: '/images/260211-plateau-ideathon.png',
         },
         {
-          link: "https://urbandata-challenge.jp/news/2025-2nd-symposium/",
-          img: "/images/251025-udc2025-2nd-symposium.png",
+          link: 'https://urbandata-challenge.jp/news/2025-2nd-symposium/',
+          img: '/images/251025-udc2025-2nd-symposium.png',
         },
 
         {
-          link: "https://facebook.com/events/1669635770372144/",
-          img: "/images/250915-omiya-mokumoku.png",
+          link: 'https://facebook.com/events/1669635770372144/',
+          img: '/images/250915-omiya-mokumoku.png',
         },
         {
-          link: "https://facebook.com/events/2206423643197052/",
-          img: "/images/250905-small-digital-consult.png",
+          link: 'https://facebook.com/events/2206423643197052/',
+          img: '/images/250905-small-digital-consult.png',
         },
         {
-          link: "https://wikiyono.peatix.com/",
-          img: " /images/250524-wikipedia-town.png",
+          link: 'https://wikiyono.peatix.com/',
+          img: ' /images/250524-wikipedia-town.png',
         },
         {
-          link: "https://civictechsaitama202503.peatix.com/",
-          img: "/images/250309-plteau-unity-workshop.png",
+          link: 'https://civictechsaitama202503.peatix.com/',
+          img: '/images/250309-plteau-unity-workshop.png',
         },
         {
-          img: "/images/241005-saitama-plateau.jpg",
-          link: "https://civictechsaitama1005.peatix.com/",
+          img: '/images/241005-saitama-plateau.jpg',
+          link: 'https://civictechsaitama1005.peatix.com/',
         },
         {
-          img: "/images/240907UDCkickoff.jpg",
-          link: "https://civictechsaitama0907.peatix.com/view",
+          img: '/images/240907UDCkickoff.jpg',
+          link: 'https://civictechsaitama0907.peatix.com/view',
         },
       ],
     };

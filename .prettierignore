@@ -1,0 +1,9 @@
+node_modules
+.nuxt
+.nitro
+.cache
+.output
+dist
+contents.sqlite
+public/sitemap.xml
+public/robots.txt

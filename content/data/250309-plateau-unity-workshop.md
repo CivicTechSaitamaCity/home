@@ -6,6 +6,7 @@ reportDate: 2025-03-24
 link: https://civictechsaitama202503.peatix.com/
 thumb: /images/250309-plteau-unity-workshop.png
 ---
+
 # 2025年3月9日さいたまPLATEAU＆Unityハンズオンイベント2025　開催レポート
 
 シビックテックさいたまでは、テクノロジーに苦手意識を持っていたり、馴染みがなかったりする人たちでも参加できるように、日ごろから「入門編」「初心者向け」として、勉強会やイベントを開催しています。

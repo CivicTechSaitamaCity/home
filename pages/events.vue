@@ -20,10 +20,10 @@
 </template>
 
 <script setup>
-const events = await queryCollection("content")
-  .where("path", "LIKE", "/data/%")
-  .where("eventDate", ">", "2020-01-01")
-  .order("eventDate", "DESC")
+const events = await queryCollection('content')
+  .where('path', 'LIKE', '/data/%')
+  .where('eventDate', '>', '2020-01-01')
+  .order('eventDate', 'DESC')
   .all();
 </script>
 
@@ -32,7 +32,7 @@ const events = await queryCollection("content")
   // width: 100%;
   max-width: 1000px;
   margin: auto;
-  font-family: "Noto Sans JP", cursive;
+  font-family: 'Noto Sans JP', cursive;
   font-size: clamp(18px, 1vw, 24px);
 
   h2 {

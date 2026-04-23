@@ -30,7 +30,6 @@ export async function generateSitemap(baseUrl: string, outputPath: string) {
     const publicDir = path.join(process.cwd(), 'public');
     const publicRoutes = await generatePublicRoutes(publicDir);
     routes.push(...publicRoutes);
-
   } catch (error) {
     console.error('Error generating sitemap routes:', error);
   }
@@ -51,10 +50,16 @@ export async function generateSitemap(baseUrl: string, outputPath: string) {
   console.log(`✓ Sitemap generated: ${outputPath}`);
 
   // Also generate robots.txt
-  await generateRobots(baseUrl, outputPath.replace('sitemap.xml', 'robots.txt'));
+  await generateRobots(
+    baseUrl,
+    outputPath.replace('sitemap.xml', 'robots.txt'),
+  );
 }
 
-async function generateDynamicRoutes(dir: string, prefix: string): Promise<RouteEntry[]> {
+async function generateDynamicRoutes(
+  dir: string,
+  prefix: string,
+): Promise<RouteEntry[]> {
   const routes: RouteEntry[] = [];
 
   try {
@@ -65,7 +70,7 @@ async function generateDynamicRoutes(dir: string, prefix: string): Promise<Route
         // Recursively process subdirectories
         const subRoutes = await generateDynamicRoutes(
           path.join(dir, entry.name),
-          `${prefix}/${entry.name}`
+          `${prefix}/${entry.name}`,
         );
         routes.push(...subRoutes);
       } else if (entry.name.endsWith('.md')) {
@@ -100,7 +105,7 @@ function hasReportDate(content: string): boolean {
   const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
   if (!frontmatterMatch) return false;
 
-  const frontmatter = frontmatterMatch[1];
+  const frontmatter = frontmatterMatch[1] ?? '';
   return /reportDate:\s*\d{4}-\d{2}-\d{2}/.test(frontmatter);
 }
 
@@ -117,12 +122,17 @@ async function generatePublicRoutes(dir: string): Promise<RouteEntry[]> {
 
       if (entry.isDirectory()) {
         // Recursively process subdirectories
-        const subRoutes = await generatePublicRoutes(path.join(dir, entry.name));
+        const subRoutes = await generatePublicRoutes(
+          path.join(dir, entry.name),
+        );
         routes.push(...subRoutes);
       } else if (entry.name.endsWith('.html') && entry.name !== 'index.html') {
         // Convert HTML file to URL path
         const filePath = path.join(dir, entry.name);
-        const relativePath = path.relative(path.join(process.cwd(), 'public'), filePath);
+        const relativePath = path.relative(
+          path.join(process.cwd(), 'public'),
+          filePath,
+        );
         const urlPath = relativePath
           .replace(/\\/g, '/') // Convert backslashes to forward slashes
           .replace(/index\.html$/, '')
@@ -145,10 +155,12 @@ async function generatePublicRoutes(dir: string): Promise<RouteEntry[]> {
 }
 
 function generateSitemapXml(baseUrl: string, routes: RouteEntry[]): string {
-  const baseUrlNormalized = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+  const baseUrlNormalized = baseUrl.endsWith('/')
+    ? baseUrl.slice(0, -1)
+    : baseUrl;
 
   const urlEntries = routes
-    .map(route => {
+    .map((route) => {
       const path = route.url ? `/${route.url}` : '';
       const fullUrl = `${baseUrlNormalized}${path}`;
       const priority = route.priority || 0.8;
@@ -167,7 +179,10 @@ ${urlEntries}
 `;
 }
 
-async function generateRobots(baseUrl: string, outputPath: string): Promise<void> {
+async function generateRobots(
+  baseUrl: string,
+  outputPath: string,
+): Promise<void> {
   const content = `# Generated robots.txt
 User-agent: *
 Allow: /

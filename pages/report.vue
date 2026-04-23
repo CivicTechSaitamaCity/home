@@ -16,10 +16,10 @@
   </div>
 </template>
 <script setup>
-const reports = await queryCollection("content")
-  .where("path", "LIKE", "/data/%")
-  .where("reportDate", ">", "2020-01-01")
-  .order("reportDate", "DESC")
+const reports = await queryCollection('content')
+  .where('path', 'LIKE', '/data/%')
+  .where('reportDate', '>', '2020-01-01')
+  .order('reportDate', 'DESC')
   .all();
 // console.log(reports)
 
@@ -31,7 +31,7 @@ const reports = await queryCollection("content")
 
 const getH1Text = (article) => {
   const children = article?.body?.children || [];
-  const h1 = children.find((child) => child.tag === "h1");
+  const h1 = children.find((child) => child.tag === 'h1');
   return h1?.children?.[0]?.value || article.title;
 };
 </script>
@@ -52,7 +52,7 @@ h2 {
 article {
   max-width: 1000px;
   margin: auto;
-  font-family: "Noto Sans JP", cursive;
+  font-family: 'Noto Sans JP', cursive;
   // font-size: clamp(18px, 1vw, 24px);
 }
 .report {

@@ -3,29 +3,29 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed } from 'vue';
 
 const props = defineProps<{ src: string; alt?: string }>();
 
 // URLのクエリを読み取りクラスを判定
 const imageClass = computed(() => {
-  const query = props.src.split("?")[1] || "";
+  const query = props.src.split('?')[1] || '';
   switch (query) {
-    case "full":
-      return "full-width";
-    case "half":
-      return "half-width";
-    case "third":
-      return "one-third";
-    case "thumbnail":
-      return "thumbnail";
+    case 'full':
+      return 'full-width';
+    case 'half':
+      return 'half-width';
+    case 'third':
+      return 'one-third';
+    case 'thumbnail':
+      return 'thumbnail';
     default:
-      return "full-width";
+      return 'full-width';
   }
 });
 
 // クエリを除去して実際の画像を指定
-const cleanSrc = computed(() => props.src.split("?")[0]);
+const cleanSrc = computed(() => props.src.split('?')[0]);
 </script>
 
 <style scoped>

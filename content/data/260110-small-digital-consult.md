@@ -5,4 +5,3 @@ eventDate: 2026-01-10
 link: https://facebook.com/events/1412551763917552/
 thumb: /images/260110-small-digital-consult.png
 ---
-

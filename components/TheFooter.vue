@@ -17,7 +17,7 @@
   &__caption {
     color: #444;
     text-align: center;
-    font-family: "Shadows Into Light";
+    font-family: 'Shadows Into Light';
   }
 }
 </style>

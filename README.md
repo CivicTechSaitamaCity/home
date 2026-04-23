@@ -38,10 +38,10 @@
 - `content/` 配下のMarkdownをもとにページを生成
 - スキーマは `content.config.ts` で管理
 - 代表的なコンテンツ配置:
-	- `content/message.md`
-	- `content/projects.md`
-	- `content/vision.md`
-	- `content/data/`（イベント・活動ログ）
+  - `content/message.md`
+  - `content/projects.md`
+  - `content/vision.md`
+  - `content/data/`（イベント・活動ログ）
 
 ### ビルド時処理
 

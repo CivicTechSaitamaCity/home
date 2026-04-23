@@ -7,14 +7,21 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "node scripts/generate.mjs",
+    "lint": "yarn typecheck && yarn format:check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
     "@nuxt/content": "^3.13.0",
     "@nuxt/image": "^2.0.0",
+    "@types/node": "^25.6.0",
     "nuxt": "4.4.2",
-    "vue-gtag-next": "^1.14.0"
+    "prettier": "^3.8.3",
+    "vue-gtag-next": "^1.14.0",
+    "vue-tsc": "^3.2.7"
   },
   "dependencies": {
     "better-sqlite3": "^12.9.0",
