@@ -2,5 +2,11 @@
     "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "chat.tools.terminal.autoApprove": {
+        "/^python - <<'PY'\nfrom pathlib import Path\nfrom PIL import Image\nfor name in \\[\n'260501-small-digital-consult\\.webp',\n'260402-small-digital-consult\\.webp',\n'260305-small-digital-consult\\.png',\n'260211-plateau-ideathon\\.png',\n'251025-udc2025-2nd-symposium\\.png',\n'250915-omiya-mokumoku\\.png'\n\\]:\n    path = Path\\('/Users/otkzh/Documents/GitHub/otkzh/home/public/images'\\)/name\n    with Image\\.open\\(path\\) as img:\n        print\\(name, img\\.size\\)\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }
