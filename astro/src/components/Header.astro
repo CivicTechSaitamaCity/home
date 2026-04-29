@@ -1,11 +1,11 @@
 ---
-const logo = new URL("../../../assets/img/logo.png", import.meta.url);
+import logo from "../../../assets/img/logo.png";
 ---
 
 <header class="site-header">
   <div class="site-header__wrapper shell">
     <a class="site-header__brand" href="/">
-      <img src={logo.href} alt="Civictech Saitama" />
+      <img src={logo.src} alt="Civictech Saitama" />
     </a>
 
     <input

@@ -51,11 +51,8 @@ const items = [
   <div class="hero-slider__viewport" data-slider-viewport>
     <div class="hero-slider__track">
       {
-        items.concat(items).map((item, index) => (
-          <article
-            class="hero-slider__slide"
-            aria-hidden={index >= items.length ? "true" : undefined}
-          >
+        items.map((item, index) => (
+          <div class="hero-slider__slide">
             <a href={item.link} target="_blank" rel="noreferrer">
               <img
                 src={item.img}
@@ -63,7 +60,7 @@ const items = [
                 loading={index < 2 ? "eager" : "lazy"}
               />
             </a>
-          </article>
+          </div>
         ))
       }
     </div>
@@ -75,11 +72,13 @@ const items = [
 
   if (viewport instanceof HTMLElement) {
     const advance = () => {
-      const amount = Math.max(viewport.clientWidth * 0.8, 320);
+      const slide = viewport.querySelector(".hero-slider__slide");
+      const amount =
+        slide instanceof HTMLElement ? slide.clientWidth : viewport.clientWidth;
       const remaining =
         viewport.scrollWidth - viewport.clientWidth - viewport.scrollLeft;
 
-      if (remaining <= amount) {
+      if (remaining <= amount / 2) {
         viewport.scrollTo({ left: 0, behavior: "smooth" });
         return;
       }
