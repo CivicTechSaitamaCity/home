@@ -15,6 +15,8 @@ body {
   color: var(--text);
   background: #fff;
   font-family: "Noto Sans JP", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.72;
 }
 
 img {
@@ -90,11 +92,12 @@ h3 {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 15px;
+  font-size: 13px;
+  letter-spacing: 0.03em;
 }
 
 .site-header__menu li {
-  padding: 0 16px;
+  padding: 0 12px;
 }
 
 .site-header__menu a {
@@ -119,13 +122,15 @@ h3 {
 
 .hero-slider__track {
   display: flex;
+  gap: 10px;
+  padding: 10px;
 }
 
 .hero-slider__slide {
-  flex: 0 0 100%;
+  flex: 0 0 calc((100% - 20px) / 3);
   min-width: 0;
-  max-width: 100%;
-  height: min(24vw, 400px);
+  max-width: calc((100% - 20px) / 3);
+  height: min(23vw, 300px);
   scroll-snap-align: start;
 }
 
@@ -137,26 +142,29 @@ h3 {
   display: block;
   width: 100%;
   height: 100%;
+  background: #f2f2f2;
 }
 
 .hero-slider__slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .content-block {
-  font-size: clamp(18px, 1vw, 24px);
+  font-size: clamp(15px, 0.95vw, 21px);
 }
 
 .content-block h2,
 .page-heading {
   width: 60%;
-  margin: 20px auto 20px;
-  font-family: "Shadows Into Light", cursive;
-  font-size: 3rem;
+  margin: 16px auto 20px;
+  font-family: cursive;
+  font-size: clamp(2.6rem, 3.6vw, 3rem);
   font-weight: 400;
   text-align: center;
+  line-height: 1.15;
 }
 
 .prose-block p,
@@ -208,13 +216,13 @@ h3 {
 .news-date {
   margin-right: 8px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .event-date {
   display: inline-block;
   margin-right: 4px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .event-date-text {
@@ -242,7 +250,7 @@ h3 {
   background: rgb(83, 139, 0);
   border: 1px solid #fff;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .section-more {
@@ -305,11 +313,11 @@ h3 {
 
 .report-item__date {
   flex: 0 0 120px;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .report-item__title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .report-detail {
@@ -339,6 +347,12 @@ h3 {
 }
 
 @media (max-width: 800px) {
+  .hero-slider__slide {
+    flex: 0 0 calc((100% - 10px) / 2);
+    max-width: calc((100% - 10px) / 2);
+    height: min(33vw, 250px);
+  }
+
   #project + ul li,
   .event-grid li {
     width: 50%;
@@ -346,6 +360,12 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  .hero-slider__slide {
+    flex: 0 0 calc((100% - 10px) / 2);
+    max-width: calc((100% - 10px) / 2);
+    height: min(42vw, 220px);
+  }
+
   article,
   section {
     padding-top: 28px;
@@ -397,5 +417,13 @@ h3 {
 
   .report-item__date {
     margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-slider__slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: min(52vw, 220px);
   }
 }
