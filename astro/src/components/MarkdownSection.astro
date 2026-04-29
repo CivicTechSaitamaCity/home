@@ -1,0 +1,17 @@
+---
+import type { ContentEntry } from "../lib/content";
+
+interface Props {
+  entry: ContentEntry;
+  id: string;
+}
+
+const { entry, id } = Astro.props;
+const SectionContent = entry.Content;
+---
+
+<section>
+  <div id={id} class="content-block prose-block">
+    <SectionContent />
+  </div>
+</section>

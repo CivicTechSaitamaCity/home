@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsList from "../components/NewsList.astro";
+import { getNewsEntries } from "../lib/content";
+
+const news = getNewsEntries();
+---
+
+<BaseLayout title="News | シビックテックさいたま">
+  <article>
+    <div class="content-block">
+      <h2 id="news">News</h2>
+      <NewsList items={news} />
+    </div>
+  </article>
+</BaseLayout>

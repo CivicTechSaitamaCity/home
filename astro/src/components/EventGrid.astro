@@ -1,0 +1,25 @@
+---
+import type { ContentEntry } from "../lib/content";
+
+interface Props {
+  items: ContentEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="event-grid">
+  {
+    items.map((event: ContentEntry) => (
+      <li class:list={{ "is-hidden": !event.frontmatter.thumb }}>
+        <a href={event.frontmatter.link} target="_blank" rel="noreferrer">
+          <img
+            src={event.frontmatter.thumb}
+            alt={event.frontmatter.title ?? "イベント画像"}
+            loading="lazy"
+          />
+        </a>
+      </li>
+    ))
+  }
+</ul>

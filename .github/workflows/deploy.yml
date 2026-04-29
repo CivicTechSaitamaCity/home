@@ -14,12 +14,13 @@ jobs:
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
       - name: Use Node.js based on .node-version
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.node-version'
-      - name: Install NPM packages
+          node-version-file: ".node-version"
+          cache: yarn
+      - name: Install dependencies
         run: yarn install
       - name: Build website
         run: yarn generate

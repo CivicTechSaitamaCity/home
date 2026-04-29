@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  getDisplayTitle,
+  getDataEntries,
+  type ContentEntry,
+} from "../../lib/content";
+
+export const getStaticPaths = async () =>
+  getDataEntries().map((entry) => ({
+    params: {
+      slug: entry.slug.slice(1).join("/"),
+    },
+    props: {
+      entry,
+    },
+  }));
+
+const { entry } = Astro.props as { entry: ContentEntry };
+const PageContent = entry.Content;
+---
+
+<BaseLayout title={`${getDisplayTitle(entry)} | シビックテックさいたま`}>
+  <article class="report-detail">
+    <h2 class="page-heading">Report</h2>
+    <PageContent />
+    <a class="back-link" href="/report">BACK</a>
+  </article>
+</BaseLayout>

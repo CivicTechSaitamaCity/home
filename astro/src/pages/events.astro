@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EventGrid from "../components/EventGrid.astro";
+import { getEventEntries } from "../lib/content";
+
+const events = getEventEntries();
+---
+
+<BaseLayout title="Event | シビックテックさいたま">
+  <article>
+    <div class="content-block">
+      <h2 id="event">Event</h2>
+      <EventGrid items={events} />
+    </div>
+  </article>
+</BaseLayout>
