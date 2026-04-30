@@ -13,7 +13,7 @@
   "devDependencies": {
     "@nuxt/content": "^3.13.0",
     "@nuxt/image": "^2.0.0",
-    "nuxt": "4.4.2",
+    "nuxt": "4.4.4",
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
