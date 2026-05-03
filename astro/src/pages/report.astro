@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate } from "../lib/formatDate";
+import { getDisplayTitle, getReportEntries } from "../lib/content";
+
+const reports = getReportEntries();
+---
+
+<BaseLayout title="Report | シビックテックさいたま">
+  <h2 class="page-heading">news-report</h2>
+  <article class="report-list">
+    {
+      reports.map((article) => (
+        <a href={article.path} class="report-link">
+          <div class="report-item">
+            <div class="report-item__date">
+              {formatDate(article.frontmatter.reportDate)}
+            </div>
+            <div class="report-item__title">{getDisplayTitle(article)}</div>
+          </div>
+        </a>
+      ))
+    }
+  </article>
+</BaseLayout>

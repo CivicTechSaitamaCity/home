@@ -2,7 +2,7 @@
 
 公式サイト: https://www.civictechsaitama.com/
 
-このリポジトリは、シビックテックさいたまのWebサイトを管理するためのNuxtプロジェクトです。
+このリポジトリは、シビックテックさいたまのWebサイトを管理するためのAstroプロジェクトです。
 
 ## シビックテックさいたまについて
 
@@ -20,23 +20,20 @@
 
 ### アーキテクチャ
 
-- Nuxt 4 / Vue 3 ベースのサイト
-- `@nuxt/content` を用いたMarkdown中心のコンテンツ管理
+- Astro 5 ベースの静的サイト
+- `content/` 配下のMarkdownを `import.meta.glob()` で読み込む構成
 - 静的サイト生成（SSG）を前提に運用
 
 ### 主な利用技術
 
-- `nuxt` `4.4.2`
-- `@nuxt/content` `3.x`
-- `@nuxt/image` `2.x`
-- `sass`
-- `vue-gtag-next`
-- `embla-carousel-vue` / `embla-carousel-autoplay`
+- `astro` `5.x`
+- `@astrojs/check`
+- `typescript`
 
 ### コンテンツ管理
 
 - `content/` 配下のMarkdownをもとにページを生成
-- スキーマは `content.config.ts` で管理
+- コンテンツの読み込みと並び順は `astro/src/lib/content.ts` で管理
 - 代表的なコンテンツ配置:
 	- `content/message.md`
 	- `content/projects.md`
@@ -45,27 +42,23 @@
 
 ### ビルド時処理
 
-- `npm run generate` / `yarn generate` で `scripts/generate.mjs` を経由して静的生成
-- 生成時に `nuxt.config.ts` のフックで `public/sitemap.xml` を更新
+- ルートの `yarn build` は `astro/` 配下のAstroアプリを実行
+- ビルド成果物は `dist/` に出力
+- ビルド後に `astro/scripts/postbuild.mjs` で `sitemap.xml` と `robots.txt` を生成
 - `public/CNAME` を参照してサイトURLを解決
+- `public/` 配下の静的HTMLや画像はそのまま `dist/` にコピー
 
 ## 開発方法
 
 ### 前提環境
 
 - Node.js `24.14.0`（`.node-version`）
-- npm または yarn（`packageManager` は yarn 1 系）
+- yarn 1 系（`packageManager` を参照）
 
 ### セットアップ
 
 ```bash
 yarn install
-```
-
-npmを使う場合:
-
-```bash
-npm install
 ```
 
 ### ローカル開発
@@ -94,9 +87,15 @@ yarn generate
 yarn preview
 ```
 
+### 型チェック
+
+```bash
+yarn typecheck
+```
+
 ## よく使う更新フロー
 
 1. `content/` 配下のMarkdownを追加・修正
 2. `yarn dev` で表示確認
-3. 必要に応じて `yarn generate` で生成結果を確認
+3. 必要に応じて `yarn build` または `yarn generate` で生成結果を確認
 4. コミット・デプロイ

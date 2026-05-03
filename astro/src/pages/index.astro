@@ -1,0 +1,60 @@
+---
+import TopSlider from "../components/TopSlider.astro";
+import MarkdownSection from "../components/MarkdownSection.astro";
+import NewsList from "../components/NewsList.astro";
+import EventGrid from "../components/EventGrid.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEventEntries, getNewsEntries, getPageEntry } from "../lib/content";
+
+const news = getNewsEntries(8);
+const events = getEventEntries(8);
+const projects = getPageEntry("projects");
+const message = getPageEntry("message");
+const vision = getPageEntry("vision");
+
+if (!projects || !message || !vision) {
+  throw new Error("Expected top page content was not found.");
+}
+---
+
+<BaseLayout>
+  <TopSlider />
+
+  <article>
+    <div class="content-block">
+      <h2 id="news">News</h2>
+      <NewsList items={news} compact />
+      <a class="section-more" href="/news">more...</a>
+    </div>
+  </article>
+
+  <MarkdownSection id="project" entry={projects} />
+
+  <article>
+    <div class="content-block">
+      <h2 id="event">Event</h2>
+      <EventGrid items={events} />
+      <a class="section-more" href="/events">more...</a>
+    </div>
+  </article>
+
+  <MarkdownSection id="message" entry={message} />
+  <MarkdownSection id="vision" entry={vision} />
+
+  <article>
+    <div class="content-block">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織、古川尚史、冨田かおり
+        </li>
+        <li>email：civictech.saitama@gmail.com</li>
+        <li>
+          <a href="https://www.facebook.com/CivicTechSaitamaCity">
+            <img src="/images/iconFb.png" alt="Facebook" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </article>
+</BaseLayout>

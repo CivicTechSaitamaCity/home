@@ -1,0 +1,61 @@
+---
+import { formatDate } from "../lib/formatDate";
+import { getDisplayTitle, type ContentEntry } from "../lib/content";
+
+interface Props {
+  items: ContentEntry[];
+  compact?: boolean;
+}
+
+const { items, compact = false } = Astro.props;
+---
+
+<ul class="news-list">
+  {
+    items.map((article: ContentEntry) => (
+      <li>
+        <div class="news-box">
+          <div>
+            <span class="news-date">
+              {formatDate(article.frontmatter.date)}
+            </span>
+          </div>
+
+          <div>
+            {article.frontmatter.eventDate && (
+              <div class="event-date">
+                <span class="event-date-text">開催日</span>
+                {formatDate(article.frontmatter.eventDate)}
+              </div>
+            )}
+
+            {article.frontmatter.link ? (
+              <a
+                class="news-link"
+                href={article.frontmatter.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>
+                  {article.frontmatter.title ?? getDisplayTitle(article)}
+                </span>
+              </a>
+            ) : (
+              <span class="news-link news-link--static">
+                {article.frontmatter.title ?? getDisplayTitle(article)}
+              </span>
+            )}
+
+            {article.frontmatter.reportDate && (
+              <a href={article.path} class="news-link">
+                <span class="news-report">レポート</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+{!compact && <div class="list-footer-spacer" />}
