@@ -3,51 +3,73 @@ const items = [
   {
     link: "https://www.facebook.com/events/931222093286395/",
     img: "/images/260501-small-digital-consult.webp",
+    title: "ちいさなデジタル相談室（2026年5月）",
   },
   {
     link: "https://www.facebook.com/events/4425766640997405/",
     img: "/images/260402-small-digital-consult.webp",
+    title: "ちいさなデジタル相談室（2026年4月）",
   },
   {
     link: "https://www.facebook.com/events/2943359932540693/",
     img: "/images/260305-small-digital-consult.png",
+    title: "ちいさなデジタル相談室（2026年3月）",
   },
   {
     link: "https://civictechsaitama202602.peatix.com/",
     img: "/images/260211-plateau-ideathon.png",
+    title: "PLATEAUアイデアソン 2026",
   },
   {
     link: "https://urbandata-challenge.jp/news/2025-2nd-symposium/",
     img: "/images/251025-udc2025-2nd-symposium.png",
+    title: "UDC2025 第2回シンポジウム",
   },
   {
     link: "https://facebook.com/events/1669635770372144/",
     img: "/images/250915-omiya-mokumoku.png",
+    title: "大宮もくもく会（2025年9月）",
   },
   {
     link: "https://facebook.com/events/2206423643197052/",
     img: "/images/250905-small-digital-consult.png",
+    title: "ちいさなデジタル相談室（2025年9月）",
   },
   {
     link: "https://wikiyono.peatix.com/",
     img: "/images/250524-wikipedia-town.png",
+    title: "ウィキペディアタウン与野 2025",
   },
   {
     link: "https://civictechsaitama202503.peatix.com/",
     img: "/images/250309-plteau-unity-workshop.png",
+    title: "PLATEAUワークショップ with Unity 2025",
   },
   {
     link: "https://civictechsaitama1005.peatix.com/",
     img: "/images/241005-saitama-plateau.jpg",
+    title: "さいたまPLATEAUイベント 2024",
   },
   {
     link: "https://civictechsaitama0907.peatix.com/view",
     img: "/images/240907UDCkickoff.jpg",
+    title: "UDC2024キックオフ",
   },
 ];
 ---
 
 <section class="hero-slider" aria-label="最近のイベント">
+  <div class="hero-slider__controls">
+    <button
+      class="hero-slider__pause"
+      id="slider-pause"
+      type="button"
+      aria-label="スライダーを一時停止"
+      aria-pressed="false"
+    >
+      <span class="hero-slider__pause-icon" aria-hidden="true">⏸</span>
+    </button>
+  </div>
   <div class="hero-slider__viewport" data-slider-viewport>
     <div class="hero-slider__track">
       {
@@ -56,10 +78,15 @@ const items = [
             class="hero-slider__slide"
             aria-hidden={index >= items.length ? "true" : undefined}
           >
-            <a href={item.link} target="_blank" rel="noreferrer">
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${item.title}（新しいタブで開く）`}
+            >
               <img
                 src={item.img}
-                alt="イベント告知画像"
+                alt={item.title}
                 loading={index < 2 ? "eager" : "lazy"}
               />
             </a>
@@ -72,6 +99,10 @@ const items = [
 
 <script is:inline>
   const viewport = document.querySelector("[data-slider-viewport]");
+  const pauseBtn = document.getElementById("slider-pause");
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   if (viewport instanceof HTMLElement) {
     const advance = () => {
@@ -96,6 +127,48 @@ const items = [
       viewport.scrollBy({ left: amount, behavior: "smooth" });
     };
 
-    window.setInterval(advance, 6000);
+    let intervalId = null;
+
+    const start = () => {
+      if (intervalId === null) {
+        intervalId = window.setInterval(advance, 6000);
+      }
+    };
+
+    const stop = () => {
+      if (intervalId !== null) {
+        window.clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    // Don't auto-play if user prefers reduced motion
+    if (!prefersReduced) {
+      start();
+    }
+
+    if (pauseBtn) {
+      pauseBtn.addEventListener("click", () => {
+        const isPaused = pauseBtn.getAttribute("aria-pressed") === "true";
+        if (isPaused) {
+          start();
+          pauseBtn.setAttribute("aria-pressed", "false");
+          pauseBtn.setAttribute("aria-label", "スライダーを一時停止");
+          pauseBtn.querySelector(".hero-slider__pause-icon").textContent = "⏸";
+        } else {
+          stop();
+          pauseBtn.setAttribute("aria-pressed", "true");
+          pauseBtn.setAttribute("aria-label", "スライダーを再生");
+          pauseBtn.querySelector(".hero-slider__pause-icon").textContent = "▶";
+        }
+      });
+
+      // Show button as already paused if reduced motion
+      if (prefersReduced) {
+        pauseBtn.setAttribute("aria-pressed", "true");
+        pauseBtn.setAttribute("aria-label", "スライダーを再生");
+        pauseBtn.querySelector(".hero-slider__pause-icon").textContent = "▶";
+      }
+    }
   }
 </script>

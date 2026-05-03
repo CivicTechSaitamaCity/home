@@ -18,13 +18,16 @@ if (!projects || !message || !vision) {
 ---
 
 <BaseLayout>
+  <h1 class="sr-only">シビックテックさいたま</h1>
   <TopSlider />
 
   <article>
     <div class="content-block">
       <h2 id="news">News</h2>
       <NewsList items={news} compact />
-      <a class="section-more" href="/news">more...</a>
+      <a class="section-more" href="/news" aria-label="ニュース一覧をもっと見る"
+        >more...</a
+      >
     </div>
   </article>
 
@@ -34,7 +37,11 @@ if (!projects || !message || !vision) {
     <div class="content-block">
       <h2 id="event">Event</h2>
       <EventGrid items={events} />
-      <a class="section-more" href="/events">more...</a>
+      <a
+        class="section-more"
+        href="/events"
+        aria-label="イベント一覧をもっと見る">more...</a
+      >
     </div>
   </article>
 
@@ -48,9 +55,18 @@ if (!projects || !message || !vision) {
         <li>
           シビックテックさいたま世話人：太田一穂、クワハラシズカ、藤田史織、古川尚史、冨田かおり
         </li>
-        <li>email：civictech.saitama@gmail.com</li>
         <li>
-          <a href="https://www.facebook.com/CivicTechSaitamaCity">
+          email：<a href="mailto:civictech.saitama@gmail.com"
+            >civictech.saitama@gmail.com</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/CivicTechSaitamaCity"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook（新しいタブで開く）"
+          >
             <img src="/images/iconFb.png" alt="Facebook" />
           </a>
         </li>

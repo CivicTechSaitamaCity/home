@@ -17,7 +17,9 @@ const { items, compact = false } = Astro.props;
         <div class="news-box">
           <div>
             <span class="news-date">
-              {formatDate(article.frontmatter.date)}
+              <time datetime={article.frontmatter.date}>
+                {formatDate(article.frontmatter.date)}
+              </time>
             </span>
           </div>
 
@@ -25,7 +27,9 @@ const { items, compact = false } = Astro.props;
             {article.frontmatter.eventDate && (
               <div class="event-date">
                 <span class="event-date-text">開催日</span>
-                {formatDate(article.frontmatter.eventDate)}
+                <time datetime={article.frontmatter.eventDate}>
+                  {formatDate(article.frontmatter.eventDate)}
+                </time>
               </div>
             )}
 
@@ -35,6 +39,7 @@ const { items, compact = false } = Astro.props;
                 href={article.frontmatter.link}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={`${article.frontmatter.title ?? getDisplayTitle(article)}（新しいタブで開く）`}
               >
                 <span>
                   {article.frontmatter.title ?? getDisplayTitle(article)}
