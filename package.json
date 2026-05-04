@@ -4,13 +4,12 @@
     "node": ">=24"
   },
   "scripts": {
-    "build": "yarn --cwd astro run build",
-    "check": "yarn --cwd astro run check",
-    "dev": "yarn --cwd astro run dev",
-    "generate": "yarn build",
-    "preview": "yarn --cwd astro run preview",
-    "postinstall": "yarn --cwd astro install",
-    "typecheck": "yarn --cwd astro run check"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "build": "npm run build --prefix astro",
+    "check": "npm run check --prefix astro",
+    "dev": "npm run dev --prefix astro",
+    "generate": "npm run build",
+    "preview": "npm run preview --prefix astro",
+    "postinstall": "npm ci --prefix astro",
+    "typecheck": "npm run check --prefix astro"
+  }
 }
