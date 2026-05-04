@@ -42,7 +42,7 @@
 
 ### ビルド時処理
 
-- ルートの `yarn build` は `astro/` 配下のAstroアプリを実行
+- ルートの `npm run build` は `astro/` 配下のAstroアプリを実行
 - ビルド成果物は `dist/` に出力
 - ビルド後に `astro/scripts/postbuild.mjs` で `sitemap.xml` と `robots.txt` を生成
 - `public/CNAME` を参照してサイトURLを解決
@@ -53,18 +53,18 @@
 ### 前提環境
 
 - Node.js `24.14.0`（`.node-version`）
-- yarn 1 系（`packageManager` を参照）
+- npm（Node.js 同梱）
 
 ### セットアップ
 
 ```bash
-yarn install
+npm ci
 ```
 
 ### ローカル開発
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ブラウザで `http://localhost:3000` を開いて確認します。
@@ -72,30 +72,30 @@ yarn dev
 ### 本番ビルド
 
 ```bash
-yarn build
+npm run build
 ```
 
 ### 静的サイト生成
 
 ```bash
-yarn generate
+npm run generate
 ```
 
 ### 生成物のローカル確認
 
 ```bash
-yarn preview
+npm run preview
 ```
 
 ### 型チェック
 
 ```bash
-yarn typecheck
+npm run typecheck
 ```
 
 ## よく使う更新フロー
 
 1. `content/` 配下のMarkdownを追加・修正
-2. `yarn dev` で表示確認
-3. 必要に応じて `yarn build` または `yarn generate` で生成結果を確認
+2. `npm run dev` で表示確認
+3. 必要に応じて `npm run build` または `npm run generate` で生成結果を確認
 4. コミット・デプロイ

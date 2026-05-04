@@ -6,20 +6,25 @@ import { getDisplayTitle, getReportEntries } from "../lib/content";
 const reports = getReportEntries();
 ---
 
-<BaseLayout title="Report | シビックテックさいたま">
-  <h2 class="page-heading">news-report</h2>
-  <article class="report-list">
+<BaseLayout
+  title="Report | シビックテックさいたま"
+  description="シビックテックさいたまのイベントレポート一覧です。"
+>
+  <h1 class="page-heading">Report</h1>
+  <section class="report-list" aria-label="レポート一覧">
     {
       reports.map((article) => (
         <a href={article.path} class="report-link">
           <div class="report-item">
             <div class="report-item__date">
-              {formatDate(article.frontmatter.reportDate)}
+              <time datetime={article.frontmatter.reportDate}>
+                {formatDate(article.frontmatter.reportDate)}
+              </time>
             </div>
             <div class="report-item__title">{getDisplayTitle(article)}</div>
           </div>
         </a>
       ))
     }
-  </article>
+  </section>
 </BaseLayout>

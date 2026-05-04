@@ -1,11 +1,60 @@
+/* ========================================
+   Visually Hidden (screen-reader only)
+   ======================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link – visible on focus only */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--accent, #538b00);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius, 8px) var(--radius, 8px);
+  text-decoration: none;
+  transition: top 0.15s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ========================================
+   CSS Variables / Design Tokens
+   ======================================== */
 :root {
   color-scheme: light;
   --shell-width: 1000px;
   --text: #000;
   --muted: #444;
   --border: #d9d9d9;
+  --accent: #538b00;
+  --bg: #fff;
+  --bg-subtle: #f5f5f5;
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.10);
+  --transition: 0.2s ease;
 }
 
+/* ========================================
+   Reset / Base
+   ======================================== */
 html {
   scroll-behavior: smooth;
 }
@@ -13,7 +62,7 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  background: #fff;
+  background: var(--bg);
   font-family: "Noto Sans JP", sans-serif;
   font-size: 15.5px;
   line-height: 1.72;
@@ -22,16 +71,33 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 main {
   min-height: 80vh;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   Layout Utilities
+   ======================================== */
+.shell,
+.content-block,
+.report-list {
+  max-width: var(--shell-width);
+  margin: 0 auto;
+}
+
 article,
 section {
   clear: both;
-  padding: 40px 16px 0;
+  padding: 28px 16px 0;
 }
 
 h1,
@@ -40,17 +106,14 @@ h3 {
   line-height: 1.25;
 }
 
-.shell,
-.content-block,
-.report-list {
-  max-width: var(--shell-width);
-  margin: 0 auto;
-}
-
+/* ========================================
+   Header – hamburger visible by default (mobile-first)
+   ======================================== */
 .site-header {
   position: relative;
   z-index: 10;
-  background: #fff;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 
 .site-header__wrapper {
@@ -58,25 +121,21 @@ h3 {
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
+  min-height: 56px;
 }
 
 .site-header__brand img {
   width: 142px;
 }
 
-.site-header__nav-toggle {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .site-header__toggle {
-  display: none;
+  display: inline-block;
   width: 44px;
   height: 44px;
   padding: 0;
   border: 0;
   background: transparent;
+  cursor: pointer;
 }
 
 .site-header__toggle span {
@@ -85,29 +144,84 @@ h3 {
   height: 2px;
   margin: 5px auto;
   background: #111;
+  transition: transform var(--transition), opacity var(--transition);
 }
 
 .site-header__menu {
-  display: flex;
+  position: absolute;
+  top: 100%;
+  right: 16px;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: min(260px, calc(100vw - 32px));
+  gap: 0;
   margin: 0;
-  padding: 0;
+  padding: 8px 0;
   list-style: none;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.03em;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .site-header__menu li {
-  padding: 0 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.site-header__menu li:last-child {
+  border-bottom: 0;
 }
 
 .site-header__menu a {
   text-decoration: none;
+  color: var(--text);
+  transition: color var(--transition);
 }
 
+.site-header__menu a:hover {
+  color: var(--accent);
+}
+
+/* ========================================
+   Hero Slider – 1 col by default (mobile-first)
+   ======================================== */
 .hero-slider {
   padding: 0;
   overflow: hidden;
   background: #eee;
+  position: relative;
+}
+
+.hero-slider__controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+}
+
+.hero-slider__pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.hero-slider__pause:hover,
+.hero-slider__pause:focus-visible {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .hero-slider__viewport {
@@ -122,20 +236,23 @@ h3 {
 
 .hero-slider__track {
   display: flex;
-  gap: 10px;
-  padding: 10px;
+  gap: 8px;
+  padding: 8px;
 }
 
 .hero-slider__slide {
-  flex: 0 0 calc((100% - 20px) / 3);
+  flex: 0 0 100%;
   min-width: 0;
-  max-width: calc((100% - 20px) / 3);
-  height: min(23vw, 300px);
+  max-width: 100%;
+  height: min(52vw, 220px);
   scroll-snap-align: start;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 
 .hero-slider__slide:hover {
   opacity: 0.85;
+  transition: opacity var(--transition);
 }
 
 .hero-slider__slide a {
@@ -152,21 +269,27 @@ h3 {
   object-position: center;
 }
 
+/* ========================================
+   Content Block
+   ======================================== */
 .content-block {
-  font-size: clamp(15px, 0.95vw, 21px);
+  font-size: 15px;
 }
 
 .content-block h2,
 .page-heading {
-  width: 60%;
+  width: 100%;
   margin: 16px auto 20px;
   font-family: cursive;
-  font-size: clamp(2.6rem, 3.6vw, 3rem);
+  font-size: 2.2rem;
   font-weight: 400;
   text-align: center;
   line-height: 1.15;
 }
 
+/* ========================================
+   Prose Block
+   ======================================== */
 .prose-block p,
 .prose-block li {
   line-height: 1.8;
@@ -181,6 +304,9 @@ h3 {
   margin: 16px auto;
 }
 
+/* ========================================
+   Project Grid – 2 col by default (mobile-first)
+   ======================================== */
 #project + ul {
   display: flex;
   flex-wrap: wrap;
@@ -190,33 +316,54 @@ h3 {
 
 #project + ul li {
   box-sizing: border-box;
-  width: 25%;
+  width: 50%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #project + ul li:hover {
-  opacity: 0.5;
+  opacity: 0.75;
+  transition: opacity var(--transition);
 }
 
 #project + ul a img {
   width: 100%;
   margin: 0;
+  transition: transform var(--transition);
 }
 
+#project + ul li:hover a img {
+  transform: scale(1.03);
+}
+
+/* ========================================
+   News List – stacked by default (mobile-first)
+   ======================================== */
 .news-list {
   padding: 0 8px;
   list-style: none;
 }
 
+.news-list li {
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+.news-list li:hover {
+  background: var(--bg-subtle);
+}
+
 .news-box {
-  display: flex;
+  display: block;
+  padding: 10px 8px;
 }
 
 .news-date {
-  margin-right: 8px;
+  margin-bottom: 4px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .event-date {
@@ -227,16 +374,24 @@ h3 {
 
 .event-date-text {
   margin-right: 4px;
-  padding: 2px;
-  color: #000;
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
 }
 
 .news-link {
   margin-right: 8px;
   text-decoration: none;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.news-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .news-link--static {
@@ -245,12 +400,18 @@ h3 {
 
 .news-report {
   display: inline-block;
-  padding: 2px;
+  padding: 2px 6px;
   color: #fff;
-  background: rgb(83, 139, 0);
-  border: 1px solid #fff;
-  border-radius: 4px;
-  font-size: 14px;
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: opacity var(--transition);
+}
+
+.news-report:hover {
+  opacity: 0.8;
 }
 
 .section-more {
@@ -258,6 +419,9 @@ h3 {
   margin: 0 0 0 8px;
 }
 
+/* ========================================
+   Event Grid – 2 col by default (mobile-first)
+   ======================================== */
 .event-grid {
   display: flex;
   flex-wrap: wrap;
@@ -267,21 +431,32 @@ h3 {
 
 .event-grid li {
   box-sizing: border-box;
-  width: 25%;
+  width: 50%;
+  overflow: hidden;
 }
 
 .event-grid li:hover {
-  opacity: 0.5;
+  opacity: 0.75;
+  transition: opacity var(--transition);
 }
 
 .event-grid img {
   width: 100%;
+  display: block;
+  transition: transform var(--transition);
+}
+
+.event-grid li:hover img {
+  transform: scale(1.03);
 }
 
 .is-hidden {
   display: none;
 }
 
+/* ========================================
+   Contact
+   ======================================== */
 .contact-list {
   padding: 0;
   list-style: none;
@@ -295,6 +470,9 @@ h3 {
   width: 24px;
 }
 
+/* ========================================
+   Report List – stacked by default (mobile-first)
+   ======================================== */
 .report-list {
   padding: 0 16px 40px;
 }
@@ -302,22 +480,29 @@ h3 {
 .report-link {
   display: block;
   text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.report-link:hover {
+  background: var(--bg-subtle);
 }
 
 .report-item {
-  display: flex;
-  gap: 16px;
-  padding: 10px 0;
+  display: block;
+  padding: 12px 8px;
   border-bottom: 1px solid var(--border);
 }
 
 .report-item__date {
-  flex: 0 0 120px;
-  font-size: 0.95rem;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+  color: var(--muted);
 }
 
 .report-item__title {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.45;
 }
 
 .report-detail {
@@ -329,6 +514,7 @@ h3 {
 .report-detail img {
   height: auto;
   margin: 16px auto;
+  border-radius: var(--radius-sm);
 }
 
 .back-link {
@@ -336,94 +522,148 @@ h3 {
   margin-top: 24px;
 }
 
+/* ========================================
+   Footer
+   ======================================== */
 .site-footer {
   padding: 0 16px 24px;
+  margin-top: 40px;
 }
 
 .site-footer__caption {
-  color: #444;
+  color: var(--muted);
   text-align: center;
   font-family: "Shadows Into Light", cursive;
 }
 
-@media (max-width: 800px) {
+/* ========================================
+   Responsive – 2-col slider (≥421px)
+   ======================================== */
+@media (min-width: 421px) {
   .hero-slider__slide {
-    flex: 0 0 calc((100% - 10px) / 2);
-    max-width: calc((100% - 10px) / 2);
-    height: min(33vw, 250px);
-  }
-
-  #project + ul li,
-  .event-grid li {
-    width: 50%;
+    flex: 0 0 calc((100% - 8px) / 2);
+    max-width: calc((100% - 8px) / 2);
+    height: min(42vw, 220px);
   }
 }
 
-@media (max-width: 640px) {
-  .hero-slider__slide {
-    flex: 0 0 calc((100% - 10px) / 2);
-    max-width: calc((100% - 10px) / 2);
-    height: min(42vw, 220px);
-  }
-
+/* ========================================
+   Responsive – Tablet and up (≥641px)
+   ======================================== */
+@media (min-width: 641px) {
   article,
   section {
-    padding-top: 28px;
+    padding-top: 40px;
+  }
+
+  .content-block {
+    font-size: clamp(15px, 0.95vw, 21px);
   }
 
   .content-block h2,
   .page-heading {
-    width: 100%;
-    font-size: 2.2rem;
+    width: 60%;
+    font-size: clamp(2.6rem, 3.6vw, 3rem);
   }
 
+  /* Desktop navigation – always visible, horizontal */
   .site-header__toggle {
-    display: inline-block;
+    display: none;
   }
 
   .site-header__menu {
-    position: absolute;
-    top: 100%;
-    right: 16px;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    min-width: min(260px, calc(100vw - 32px));
-    gap: 0;
-    padding: 8px 0;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    position: static !important;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    min-width: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 13px;
   }
 
-  .site-header__nav-toggle:checked + .site-header__toggle + nav .site-header__menu {
-    display: flex;
+  /* Override hidden attribute on desktop */
+  #site-menu[hidden] {
+    display: flex !important;
   }
 
   .site-header__menu li {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .site-header__menu li:last-child {
+    padding: 0 12px;
     border-bottom: 0;
   }
 
-  .news-box,
+  /* News list: horizontal layout */
+  .news-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 8px;
+  }
+
+  .news-date {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+
+  /* Report list: horizontal layout */
   .report-item {
-    display: block;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 10px 8px;
   }
 
   .report-item__date {
-    margin-bottom: 6px;
+    flex: 0 0 120px;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  .report-item__title {
+    font-size: 1.1rem;
+  }
+
+  .hero-slider__slide {
+    height: min(33vw, 250px);
   }
 }
 
-@media (max-width: 420px) {
+/* ========================================
+   Responsive – Desktop (≥801px)
+   ======================================== */
+@media (min-width: 801px) {
+  .hero-slider__track {
+    gap: 10px;
+    padding: 10px;
+  }
+
   .hero-slider__slide {
-    flex: 0 0 100%;
-    max-width: 100%;
-    height: min(52vw, 220px);
+    flex: 0 0 calc((100% - 20px) / 3);
+    max-width: calc((100% - 20px) / 3);
+    height: min(23vw, 300px);
+  }
+
+  #project + ul li,
+  .event-grid li {
+    width: 25%;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

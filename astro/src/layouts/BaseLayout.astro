@@ -5,9 +5,13 @@ import "../styles/global.css";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "シビックテックさいたま" } = Astro.props;
+const {
+  title = "シビックテックさいたま",
+  description = "シビックテックさいたまは、埼玉のICT・オープンデータ活用を市民目線で推進するコミュニティです。",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,6 +20,8 @@ const { title = "シビックテックさいたま" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,8 +36,9 @@ const { title = "シビックテックさいたま" } = Astro.props;
     />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">コンテンツへスキップ</a>
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />

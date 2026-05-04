@@ -5,26 +5,24 @@ import logo from "../../../assets/img/logo.png";
 <header class="site-header">
   <div class="site-header__wrapper shell">
     <a class="site-header__brand" href="/">
-      <img src={logo.src} alt="Civictech Saitama" />
+      <img src={logo.src} alt="シビックテックさいたま ホームへ" />
     </a>
 
-    <input
-      class="site-header__nav-toggle"
-      id="site-menu-toggle"
-      type="checkbox"
-    />
-    <label
+    <button
       class="site-header__toggle"
-      for="site-menu-toggle"
-      aria-label="メニューを開閉"
+      id="site-menu-toggle"
+      type="button"
+      aria-controls="site-menu"
+      aria-expanded="false"
+      aria-label="メニューを開く"
     >
       <span></span>
       <span></span>
       <span></span>
-    </label>
+    </button>
 
-    <nav>
-      <ul id="site-menu" class="site-header__menu">
+    <nav aria-label="サイトナビゲーション">
+      <ul id="site-menu" class="site-header__menu" hidden>
         <li><a href="/#news">NEWS</a></li>
         <li><a href="/#project">PROJECT</a></li>
         <li><a href="/#event">EVENT</a></li>
@@ -35,3 +33,45 @@ import logo from "../../../assets/img/logo.png";
     </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById("site-menu-toggle");
+  const menu = document.getElementById("site-menu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
+      toggle.setAttribute(
+        "aria-label",
+        isExpanded ? "メニューを開く" : "メニューを閉じる",
+      );
+      menu.hidden = isExpanded;
+    });
+
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      if (
+        !toggle.contains(e.target as Node) &&
+        !menu.contains(e.target as Node)
+      ) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "メニューを開く");
+        menu.hidden = true;
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (
+        e.key === "Escape" &&
+        toggle.getAttribute("aria-expanded") === "true"
+      ) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "メニューを開く");
+        menu.hidden = true;
+        toggle.focus();
+      }
+    });
+  }
+</script>

@@ -12,7 +12,12 @@ const { items } = Astro.props;
   {
     items.map((event: ContentEntry) => (
       <li class:list={{ "is-hidden": !event.frontmatter.thumb }}>
-        <a href={event.frontmatter.link} target="_blank" rel="noreferrer">
+        <a
+          href={event.frontmatter.link}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${event.frontmatter.title ?? "イベント"}（新しいタブで開く）`}
+        >
           <img
             src={event.frontmatter.thumb}
             alt={event.frontmatter.title ?? "イベント画像"}
