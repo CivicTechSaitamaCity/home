@@ -1,0 +1,34 @@
+---
+import { isExternalEntry, toEntryHref, type NewsEntry } from "../lib/newsCollection";
+
+interface Props {
+  items: NewsEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="event-grid">
+  {
+    items.map((event) => {
+      const image = event.data.image;
+      const href = toEntryHref(event);
+      const isExternal = isExternalEntry(event);
+
+      return (
+        <li class:list={{ "is-hidden": !image }}>
+          <a
+            href={href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noreferrer" : undefined}
+            aria-label={isExternal ? `${event.data.title}（新しいタブで開く）` : event.data.title}
+          >
+            {image && (
+              <img src={image} alt={event.data.title ?? "イベント画像"} loading="lazy" />
+            )}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

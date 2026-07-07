@@ -1,16 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import NewsList from "../components/NewsList.astro";
-import { getNewsEntries } from "../lib/content";
+import CollectionNewsList from "../components/CollectionNewsList.astro";
+import Pagination from "../components/Pagination.astro";
+import {
+  getPageItems,
+  getSortedNewsEntries,
+  getTotalPages,
+  PAGE_SIZE,
+} from "../lib/newsCollection";
 
-const news = getNewsEntries();
+const allNews = await getSortedNewsEntries();
+const news = getPageItems(allNews, 1, PAGE_SIZE);
+const totalPages = getTotalPages(allNews, PAGE_SIZE);
 ---
 
 <BaseLayout title="News | シビックテックさいたま">
   <article>
     <div class="content-block">
       <h1 id="news" class="page-heading">News</h1>
-      <NewsList items={news} />
+      <CollectionNewsList items={news} />
+      <Pagination currentPage={1} totalPages={totalPages} basePath="/news" />
     </div>
   </article>
 </BaseLayout>

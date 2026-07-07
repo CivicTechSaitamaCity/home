@@ -64,8 +64,8 @@ body {
   color: var(--text);
   background: var(--bg);
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 15.5px;
-  line-height: 1.72;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 img {
@@ -273,7 +273,7 @@ h3 {
    Content Block
    ======================================== */
 .content-block {
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .content-block h2,
@@ -281,7 +281,7 @@ h3 {
   width: 100%;
   margin: 16px auto 20px;
   font-family: cursive;
-  font-size: 2.2rem;
+  font-size: 2.25rem;
   font-weight: 400;
   text-align: center;
   line-height: 1.15;
@@ -355,21 +355,29 @@ h3 {
 }
 
 .news-box {
-  display: block;
-  padding: 10px 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 8px;
+}
+
+.news-content {
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .news-date {
   margin-bottom: 4px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 0.875rem;
   color: var(--muted);
 }
 
 .event-date {
   display: inline-block;
   margin-right: 4px;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 
 .event-date-text {
@@ -379,11 +387,18 @@ h3 {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.news-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 8px;
 }
 
 .news-link {
-  margin-right: 8px;
+  font-size: 1rem;
   text-decoration: none;
   color: var(--text);
   transition: color var(--transition);
@@ -404,7 +419,7 @@ h3 {
   color: #fff;
   background: var(--accent);
   border-radius: var(--radius-sm);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   transition: opacity var(--transition);
@@ -414,9 +429,91 @@ h3 {
   opacity: 0.8;
 }
 
+.news-thumb {
+  flex: 0 0 76px;
+  width: 76px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+}
+
+.news-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.news-thumb:hover img {
+  transform: scale(1.04);
+}
+
 .section-more {
   display: inline-block;
   margin: 0 0 0 8px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 2px 8px;
+  color: var(--muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.tag-list--detail {
+  justify-content: center;
+  margin: -8px 0 24px;
+}
+
+.entry-date {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  text-align: center;
+}
+
+.entry-jump-link {
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 28px 0 8px;
+  font-size: 15px;
+}
+
+.pagination__link {
+  padding: 6px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.pagination__link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.pagination__status {
+  color: var(--muted);
 }
 
 /* ========================================
@@ -557,13 +654,13 @@ h3 {
   }
 
   .content-block {
-    font-size: clamp(15px, 0.95vw, 21px);
+    font-size: 1rem;
   }
 
   .content-block h2,
   .page-heading {
     width: 60%;
-    font-size: clamp(2.6rem, 3.6vw, 3rem);
+    font-size: clamp(2.4rem, 3.2vw, 2.85rem);
   }
 
   /* Desktop navigation – always visible, horizontal */
@@ -594,18 +691,25 @@ h3 {
     border-bottom: 0;
   }
 
-  /* News list: horizontal layout */
   .news-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
     padding: 10px 8px;
+  }
+
+  .news-content {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 8px;
   }
 
   .news-date {
     margin-bottom: 0;
     flex-shrink: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
+  }
+
+  .news-thumb {
+    flex-basis: 112px;
+    width: 112px;
   }
 
   /* Report list: horizontal layout */

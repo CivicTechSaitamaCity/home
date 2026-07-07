@@ -1,0 +1,32 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath: string;
+}
+
+const { currentPage, totalPages, basePath } = Astro.props;
+const pageHref = (page: number) => (page === 1 ? basePath : `${basePath}/page/${page}`);
+---
+
+{
+  totalPages > 1 && (
+    <nav class="pagination" aria-label="ページネーション">
+      {currentPage > 1 && (
+        <a class="pagination__link" href={pageHref(currentPage - 1)}>
+          前へ
+        </a>
+      )}
+
+      <span class="pagination__status">
+        {currentPage} / {totalPages}
+      </span>
+
+      {currentPage < totalPages && (
+        <a class="pagination__link" href={pageHref(currentPage + 1)}>
+          次へ
+        </a>
+      )}
+    </nav>
+  )
+}

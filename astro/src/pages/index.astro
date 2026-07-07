@@ -1,13 +1,14 @@
 ---
 import TopSlider from "../components/TopSlider.astro";
 import MarkdownSection from "../components/MarkdownSection.astro";
-import NewsList from "../components/NewsList.astro";
-import EventGrid from "../components/EventGrid.astro";
+import CollectionNewsList from "../components/CollectionNewsList.astro";
+import CollectionEventGrid from "../components/CollectionEventGrid.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getEventEntries, getNewsEntries, getPageEntry } from "../lib/content";
+import { getPageEntry } from "../lib/content";
+import { getSortedEventEntries, getSortedNewsEntries, PAGE_SIZE } from "../lib/newsCollection";
 
-const news = getNewsEntries(8);
-const events = getEventEntries(8);
+const news = (await getSortedNewsEntries()).slice(0, PAGE_SIZE);
+const events = (await getSortedEventEntries()).slice(0, PAGE_SIZE);
 const projects = getPageEntry("projects");
 const message = getPageEntry("message");
 const vision = getPageEntry("vision");
@@ -24,7 +25,7 @@ if (!projects || !message || !vision) {
   <article>
     <div class="content-block">
       <h2 id="news">News</h2>
-      <NewsList items={news} compact />
+      <CollectionNewsList items={news} compact />
       <a class="section-more" href="/news" aria-label="ニュース一覧をもっと見る"
         >more...</a
       >
@@ -36,7 +37,7 @@ if (!projects || !message || !vision) {
   <article>
     <div class="content-block">
       <h2 id="event">Event</h2>
-      <EventGrid items={events} />
+      <CollectionEventGrid items={events} />
       <a
         class="section-more"
         href="/events"

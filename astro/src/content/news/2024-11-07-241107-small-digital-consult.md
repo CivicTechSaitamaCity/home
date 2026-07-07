@@ -1,0 +1,13 @@
+---
+title: "11/7木曜日に「【UDC2024】ちいさなデジタル相談室」開催します。"
+date: 2024-11-07
+category: "event"
+tags:
+  - "デジタル相談室"
+author_name: "シビックテックさいたま"
+author_type: "internal"
+external_url: "https://facebook.com/events/9407351342614037"
+image: "/images/241107-small-digital-consult.jpg"
+status: "ended"
+---
+<!-- SPLIT_REPORT -->

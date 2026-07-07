@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate } from "../../lib/formatDate";
+import { toDateValue } from "../../lib/newsCollection";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("news");
+
+  return entries.map((entry) => ({
+    params: { slug: entry.id.replace(/\.mdx?$/, "") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const hasInlineReport = Boolean(entry.body?.split("<!-- SPLIT_REPORT -->")[1]?.trim());
+---
+
+<BaseLayout title={`${entry.data.title} | シビックテックさいたま`}>
+  <article>
+    <div class="content-block">
+      <p class="entry-date">{formatDate(toDateValue(entry.data.date))}</p>
+      <h1 class="page-heading">{entry.data.title}</h1>
+      {
+        entry.data.tags && entry.data.tags.length > 0 && (
+          <ul class="tag-list tag-list--detail" aria-label="タグ">
+            {entry.data.tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+        )
+      }
+      {
+        hasInlineReport && (
+          <p class="entry-jump-link">
+            <a href="#report">レポートへ移動</a>
+          </p>
+        )
+      }
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

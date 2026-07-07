@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CollectionNewsList from "../../../components/CollectionNewsList.astro";
+import Pagination from "../../../components/Pagination.astro";
+import {
+  getPageItems,
+  getSortedNewsEntries,
+  getTotalPages,
+  PAGE_SIZE,
+} from "../../../lib/newsCollection";
+
+export async function getStaticPaths() {
+  const allNews = await getSortedNewsEntries();
+  const totalPages = getTotalPages(allNews, PAGE_SIZE);
+
+  return Array.from({ length: Math.max(totalPages - 1, 0) }, (_, index) => {
+    const page = index + 2;
+
+    return {
+      params: { page: String(page) },
+      props: {
+        currentPage: page,
+        totalPages,
+        news: getPageItems(allNews, page, PAGE_SIZE),
+      },
+    };
+  });
+}
+
+const { currentPage, totalPages, news } = Astro.props;
+---
+
+<BaseLayout title={`News ${currentPage} | シビックテックさいたま`}>
+  <article>
+    <div class="content-block">
+      <h1 id="news" class="page-heading">News</h1>
+      <CollectionNewsList items={news} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/news" />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,109 @@
+---
+import { formatDate } from "../lib/formatDate";
+import {
+  isExternalEntry,
+  toDateValue,
+  toEntryHref,
+  toEntrySlug,
+  type NewsEntry,
+} from "../lib/newsCollection";
+
+interface Props {
+  items: NewsEntry[];
+  compact?: boolean;
+}
+
+const { items, compact = false } = Astro.props;
+
+const splitMarker = "<!-- SPLIT_REPORT -->";
+---
+
+<ul class="news-list">
+  {
+    items.map((entry) => {
+      const href = toEntryHref(entry);
+      const isExternal = isExternalEntry(entry);
+      const reportBody = entry.body?.split(splitMarker)[1]?.trim();
+      const hasInlineReport = Boolean(reportBody);
+      const titleLooksLikeReport = /レポート|報告|report/i.test(entry.data.title);
+      const reportHref = hasInlineReport
+        ? `/news/${toEntrySlug(entry)}#report`
+        : titleLooksLikeReport
+          ? href
+          : undefined;
+
+      return (
+        <li>
+          <div class="news-box">
+            <div class="news-content">
+              <div>
+                <span class="news-date">
+                  <time datetime={toDateValue(entry.data.date)}>
+                    {formatDate(toDateValue(entry.data.date))}
+                  </time>
+                </span>
+              </div>
+
+              <div>
+                {entry.data.category === "event" && (
+                  <div class="event-date">
+                    <span class="event-date-text">開催日</span>
+                    <time datetime={toDateValue(entry.data.date)}>
+                      {formatDate(toDateValue(entry.data.date))}
+                    </time>
+                  </div>
+                )}
+
+                <div class="news-main">
+                  <a
+                    class="news-link"
+                    href={href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noreferrer" : undefined}
+                    aria-label={isExternal ? `${entry.data.title}（新しいタブで開く）` : entry.data.title}
+                  >
+                    <span>{entry.data.title}</span>
+                  </a>
+
+                  {reportHref && (
+                    <a
+                      href={reportHref}
+                      class="news-link news-report-link"
+                      target={!hasInlineReport && isExternal ? "_blank" : undefined}
+                      rel={!hasInlineReport && isExternal ? "noreferrer" : undefined}
+                    >
+                      <span class="news-report">レポート</span>
+                    </a>
+                  )}
+                </div>
+
+                {entry.data.tags && entry.data.tags.length > 0 && (
+                  <ul class="tag-list" aria-label="タグ">
+                    {entry.data.tags.map((tag) => (
+                      <li>{tag}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+
+            {entry.data.image && (
+              <a
+                class="news-thumb"
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noreferrer" : undefined}
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <img src={entry.data.image} alt="" loading="lazy" />
+              </a>
+              )}
+          </div>
+        </li>
+      );
+    })
+  }
+</ul>
+
+{!compact && <div class="list-footer-spacer" />}

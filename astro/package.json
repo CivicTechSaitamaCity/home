@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build && node ./scripts/postbuild.mjs",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "migrate:news": "node ./scripts/migrate.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
